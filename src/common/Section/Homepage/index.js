@@ -12,7 +12,9 @@ const Homepage = () => {
             <ul>
               <li>
                 <Link to="/Author">O autorze</Link>
-                <Link to="/Service">Współpraca</Link>
+              </li>
+              <li>
+              <Link to="/Service">Współpraca</Link>
               </li>
             </ul>
 
