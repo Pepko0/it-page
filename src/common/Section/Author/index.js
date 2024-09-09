@@ -1,8 +1,10 @@
-import {Image} from "./styled";
 
-export default () => (
-    <Image>
 
-    </Image>
-   
-   );
+const Author = () => {
+    return(
+        <p>Author</p>
+    )
+
+}
+
+export default Author;

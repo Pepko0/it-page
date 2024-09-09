@@ -5,7 +5,7 @@ export const Container = styled.div`
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  border: solid black;
+ // border: solid black;
   display: flex;
   justify-content: center;
   align-items: center;
