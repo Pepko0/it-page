@@ -11,7 +11,7 @@ export const Container = styled.div`
   align-items: center;
   margin: 20px;
   background-image: url("https://i.postimg.cc/nrV0zp0p/IMG-3954.avif");
-  box-shadow: 10px 10px 26px 50px #fc6299 inset;
+  //box-shadow: 10px 10px 26px 50px #fc6299 inset;
 `;
 
 export const Navigation = styled.div`
