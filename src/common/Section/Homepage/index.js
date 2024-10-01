@@ -1,7 +1,5 @@
 import { Container, Navigation, NavigationTitle } from "./styled";
-import { HashRouter, Link, Switch, Route } from "react-router-dom";
-import Author from "../Author";
-import { HashLink } from "react-router-hash-link";
+import {  Link } from "react-router-dom";
 
 
 const Homepage = () => {
