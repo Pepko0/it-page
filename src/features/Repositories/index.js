@@ -10,7 +10,7 @@ const Repositories = ({
       <RepositoriesContent>
         <Title>{title}</Title>
         <Content>{descriptions}</Content>
-        {`demo: `}
+        {`Demo: `}
         <Link href={linkPage}>{linkPage}</Link><br/>
         {`Repo: `}
         <Link href={linkRepositories}>{linkRepositories}</Link>
