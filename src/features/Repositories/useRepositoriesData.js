@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const apiGitHub = "https://api.github.com/users/Pepko0/repos";
+const apiGitHub = "https://api.github.com/users/Pepko0/reposs";
 
 const useRepositoriesData = () => {
   const [repositoriesData, setRepositoriesData] = useState({
