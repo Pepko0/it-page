@@ -20,7 +20,7 @@ const RepositoriesPage = () => {
                 title={repository.name}
                 descriptions={repository.descriptions}
                 linkPage={repository.html_url}
-                linkRepositories={repository.owner.html_url}
+                linkRepositories={repository.homepage}
               />
             ))}
         </Content>
