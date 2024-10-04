@@ -10,6 +10,7 @@ export const AuthorPhoto = styled.img`
   @media (max-width: ${({ theme }) => theme.media.phone}) {
     align-self: center;
     justify-self: center;
+    width: 40vw;
   }
 `;
 
