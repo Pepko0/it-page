@@ -15,11 +15,15 @@ export const AuthorPhoto = styled.img`
 
 export const Header = styled.header`
   max-width: 90vw;
-  height: 20vw;
+  //height: 20vw;
   margin: 20px auto;
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-gap: 2vw;
+
+  @media (max-width: ${({ theme }) => theme.media.phone}) {
+    grid-template-columns: 1fr ;
+  }
 `;
 
 export const Title = styled.h1`
@@ -27,14 +31,15 @@ export const Title = styled.h1`
   margin-top: 0px;
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
-    font-size: 3vw;
+    font-size: 5vw;
   }
 `;
 
 export const SubText = styled.p`
   font-size: 1vw;
   @media (max-width: ${({ theme }) => theme.media.phone}) {
-    font-size: 2vw;
+    font-size: 3vw;
+    margin-bottom: 0px;
   }
 `;
 
@@ -42,6 +47,6 @@ export const Text = styled.p`
   font-size: 1.3vw;
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
-    font-size: 2.3vw;
+    font-size: 3.5vw;
   }
 `;
