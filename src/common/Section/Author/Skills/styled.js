@@ -12,6 +12,10 @@ export const Title = styled.h2`
     margin: 20px;
     padding: 10px;
     border-bottom: solid 1px;
+
+    @media(max-width: ${({theme}) => theme.media.phone}){
+      font-size: 5vw;
+    }
 `;
 
 export const Ul = styled.ul`
