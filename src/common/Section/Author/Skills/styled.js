@@ -14,7 +14,7 @@ export const Title = styled.h2`
     border-bottom: solid 1px;
 
     @media(max-width: ${({theme}) => theme.media.phone}){
-      font-size: 5vw;
+      font-size: 7vw;
     }
 `;
 
