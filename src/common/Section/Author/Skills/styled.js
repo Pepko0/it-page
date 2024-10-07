@@ -5,6 +5,7 @@ export const Container = styled.div`
   margin: 60px auto;
   background-color: white;
   box-shadow: 5px 5px 5px 0px #eaeaea;
+  padding-bottom: 5px;
 `;
 
 export const Title = styled.h2`
