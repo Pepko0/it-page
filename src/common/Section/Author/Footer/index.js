@@ -3,7 +3,7 @@ import { Container, SubText, Mail, Text } from "./styled";
 const Footer = () => (
   <Container>
     <SubText>LET'S TALK</SubText>
-    <Mail href="mailto:k.lewkosga@gmail.com">k.lewkosga@gmail.com</Mail>
+    <Mail href="mailto:k.lewkosga@gmail.com" title="Send e-mail Kacper Lewko">k.lewkosga@gmail.com</Mail>
     <Text>
       I'm always open to new projects whenever I have the time. If you have a
       website, dashboard or a mobile app in mind and need help making your ideas

@@ -15,7 +15,14 @@ export const SubText = styled.p`
 `;
 
 export const Mail = styled.a`
+    text-decoration: none;
     font-size: 2vw;
+    font-weight: bold;
+    color: ${({theme}) => theme.color.mainblue};
+
+    @media (max-width: ${({ theme }) => theme.media.phone}) {
+        font-size: 5vw;
+    };
 `
 
 export const Text = styled.p`
