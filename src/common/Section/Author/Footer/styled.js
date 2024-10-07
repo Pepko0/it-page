@@ -32,3 +32,16 @@ export const Text = styled.p`
     font-size: 3.5vw;
   }
 `;
+
+export const Logo = styled.svg`
+  width:  5vw;
+  fill: "#000000";
+
+  @media(max-width: ${({theme}) => theme.media.tablet}){
+    width:  6.5vw;
+  }
+
+  @media(max-width: ${({theme}) => theme.media.phone}){
+    width:  7.5vw;
+}
+`
