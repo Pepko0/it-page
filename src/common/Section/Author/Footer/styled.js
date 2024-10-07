@@ -38,10 +38,10 @@ export const Logo = styled.svg`
   fill: "#000000";
 
   @media(max-width: ${({theme}) => theme.media.tablet}){
-    width:  6.5vw;
+    width:  8vw;
   }
 
   @media(max-width: ${({theme}) => theme.media.phone}){
-    width:  7.5vw;
+    width:  10vw;
 }
 `
