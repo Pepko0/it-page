@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.footer`
     width: 90vw;
-    margin: auto;
+    margin: 40px auto;
     height: 100px;
 `;
 
@@ -38,10 +38,10 @@ export const Logo = styled.svg`
   fill: "#000000";
 
   @media(max-width: ${({theme}) => theme.media.tablet}){
-    width:  8vw;
+    width:  12vw;
   }
 
   @media(max-width: ${({theme}) => theme.media.phone}){
-    width:  10vw;
+    width:  14vw;
 }
 `
