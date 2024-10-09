@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 90vw;
-  height: 500px;
+  padding:50px;
   margin: auto;
   display: flex;
   background-color:  #D6D6D6 ;
@@ -13,18 +13,29 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 1.5vw;
+  font-size: 2vw;
   padding: 10px;
+
+  @media(max-width: ${({theme}) => theme.media.tablet}){
+    font-size: 3vw
+  }
+
+  @media(max-width: ${({theme}) => theme.media.tablet}){
+    font-size: 4vw
+  }
 `;
 
 export const IconGitHub = styled.svg`
-  width: 100px;
-  height: 100px;
+  width:20vw;
   animation-duration: 2s;
   animation-delay: 0.5s;
   fill: grey;
   animation-name: color;
   animation-iteration-count: infinite;
+
+  @media (max-width: ${({ theme }) => theme.media.phone}) {
+    width: 35vw;
+  }
 
   @keyframes color {
     0% {
