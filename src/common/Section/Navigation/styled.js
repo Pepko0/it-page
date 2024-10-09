@@ -16,5 +16,12 @@ export const Container = styled.nav`
 export const StyledLink = styled(Link)`
     font-size: 1.5vw;
     text-decoration: none;
-    ;
+    
+    @media(max-width: ${({theme}) => theme.media.tablet}){
+        font-size: 2.5vw;
+    }
+
+    @media(max-width: ${({theme}) => theme.media.phone}){
+        font-size: 4.5vw;
+    }
 `
