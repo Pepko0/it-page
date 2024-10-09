@@ -1,4 +1,4 @@
-import { RepositoriesContent, Title, Content, Link } from "./styled";
+import { RepositoriesContent, Title, Content, Link, Text } from "./styled";
 
 const Repositories = ({
     title,
@@ -10,9 +10,9 @@ const Repositories = ({
       <RepositoriesContent>
         <Title>{title}</Title>
         <Content>{descriptions}</Content>
-        {`Demo: `}
+        <Text>Demo: </Text>
         <Link href={linkPage}>{linkPage}</Link><br/>
-        {`Repo: `}
+        <Text>Repo: </Text>
         <Link href={linkRepositories}>{linkRepositories}</Link>
       </RepositoriesContent>
     );
