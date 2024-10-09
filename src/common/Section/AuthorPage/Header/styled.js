@@ -1,5 +1,17 @@
 import styled from "styled-components";
 
+export const Header = styled.header`
+  max-width: 90vw;
+  margin: 100px auto 40px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 2vw;
+
+  @media (max-width: ${({ theme }) => theme.media.phone}) {
+    grid-template-columns: 1fr ;
+  }
+`;
+
 export const AuthorPhoto = styled.img`
   width: 20vw;
   border-radius: 100%;
@@ -11,19 +23,6 @@ export const AuthorPhoto = styled.img`
     align-self: center;
     justify-self: center;
     width: 40vw;
-  }
-`;
-
-export const Header = styled.header`
-  max-width: 90vw;
-  //height: 20vw;
-  margin: 20px auto;
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  grid-gap: 2vw;
-
-  @media (max-width: ${({ theme }) => theme.media.phone}) {
-    grid-template-columns: 1fr ;
   }
 `;
 

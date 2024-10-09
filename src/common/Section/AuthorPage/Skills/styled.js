@@ -9,10 +9,14 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 1.5vw;
+  font-size: 1.8vw;
   margin: 20px;
   padding: 10px;
   border-bottom: solid 1px;
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    font-size: 4vw;
+  }
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
     font-size: 5vw;
