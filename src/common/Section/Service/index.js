@@ -1,8 +1,9 @@
-
+import Navigation from "../Navigation";
 
 const Service = () => {
     return(
-        <p>Service Page</p>
+        <Navigation />
+
     )
 
 }
