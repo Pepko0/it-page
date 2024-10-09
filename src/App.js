@@ -2,7 +2,7 @@ import "./App.css";
 import Homepage from "./common/Section/Homepage";
 import { HashRouter, Switch, Route } from "react-router-dom";
 import AuthorPage from "./common/Section/AuthorPage";
-import Service from "./common/Section/Service";
+import Service from "./common/Section/ServicePage";
 
 export default () => (
   <HashRouter>
