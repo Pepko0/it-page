@@ -11,12 +11,15 @@ export const Container = styled.nav`
     justify-content: center;
     gap: 20px;
     padding: 20px;
+    box-shadow: 5px 5px 5px 0px #EAEAEA;
 `
 
 export const StyledLink = styled(Link)`
-    font-size: 1.5vw;
     text-decoration: none;
-    
+    font-size: 1.5vw;
+    color: ${({theme}) => theme.color.mainblue};
+
+
     @media(max-width: ${({theme}) => theme.media.tablet}){
         font-size: 2.5vw;
     }

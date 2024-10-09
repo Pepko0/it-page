@@ -33,12 +33,41 @@ export const Text = styled.p`
   }
 `;
 
-export const Logo = styled.svg`
+export const LogoGH = styled.svg`
   width:  5vw;
-  fill: "#000000";
+  fill: ${({theme}) => theme.color.black};
+  
+  :hover {
+    fill: ${({theme}) => theme.color.gray};
+  }
 
   @media(max-width: ${({theme}) => theme.media.tablet}){
     width:  12vw;
+
+    :hover {
+    fill: ${({theme}) => theme.color.black};
+  }
+  }
+
+  @media(max-width: ${({theme}) => theme.media.phone}){
+    width:  14vw;
+}
+`
+
+
+export const LogoLk = styled.svg`
+  width:  5vw;
+  fill: "#000000";
+  :hover {
+    fill: ${({theme}) => theme.color.linkedine};
+  }
+
+  @media(max-width: ${({theme}) => theme.media.tablet}){
+    width:  12vw;
+
+    :hover {
+      fill: ${({theme}) => theme.color.black};
+    }
   }
 
   @media(max-width: ${({theme}) => theme.media.phone}){

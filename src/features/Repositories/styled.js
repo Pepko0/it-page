@@ -36,7 +36,7 @@ export const Link = styled.a`
   }
 
   @media(max-width: ${({theme}) => theme.media.phone}){
-    font-size: 3vw;
+    font-size: 3.5vw;
   }
 `;
 
@@ -49,6 +49,6 @@ export const Text = styled.p`
   }
 
   @media(max-width: ${({theme}) => theme.media.phone}){
-    font-size: 3vw;
+    font-size: 3.5vw;;
   }
 `;

@@ -18,6 +18,7 @@ export const theme = {
         lightgray: "#f2f2f2",
         mercury: "#e2e2e2",
         portage: "#7DA3E3",
+        linkedine: "#0a66c2"
     },
 
 }
