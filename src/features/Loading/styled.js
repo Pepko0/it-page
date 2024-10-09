@@ -20,13 +20,13 @@ export const Title = styled.h2`
     font-size: 3vw
   }
 
-  @media(max-width: ${({theme}) => theme.media.tablet}){
+  @media(max-width: ${({theme}) => theme.media.phone}){
     font-size: 4vw
   }
 `;
 
 export const IconGitHub = styled.svg`
-  width:20vw;
+  width:12vw;
   animation-duration: 2s;
   animation-delay: 0.5s;
   fill: grey;
