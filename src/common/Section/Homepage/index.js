@@ -7,10 +7,13 @@ import {
   Ul,
   Background,
 } from "./styled";
+import HomePageHeader from "./Header";
 
 const Homepage = () => {
   return (
-    <Container>
+    <>
+      <HomePageHeader />
+      <Container>
         <Navigation>
           <NavigationTitle>
             Witaj na mojej stronie internetowej! Wybierz co chcesz zrobić
@@ -24,7 +27,8 @@ const Homepage = () => {
             </Lists>
           </Ul>
         </Navigation>
-    </Container>
+      </Container>
+    </>
   );
 };
 
