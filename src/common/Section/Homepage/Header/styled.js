@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Header = styled.header`
   max-width: 90vw;
-  margin: 100px auto 40px;
+  margin: 20px auto 40px;
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-gap: 2vw;
