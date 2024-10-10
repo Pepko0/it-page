@@ -23,46 +23,23 @@ export const Container = styled.div`
   display: grid;
   align-items: center;
   justify-content: center;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
   grid-gap: 10px;
 
   @media(max-width: ${({theme}) => theme.media.phone}){
-    grid-template-columns: 1fr;
-    width: 90vw;
+   
   }
 `;
 
-export const Background1 = styled.div`
+export const Background = styled.div`
   background-image: url("https://i.postimg.cc/nrV0zp0p/IMG-3954.avif");
-  width: 100%;
-  height: 100%;
+  width: 80vw;
+  height: 50vw;
+  margin: auto;
   background-repeat: no-repeat;
   background-size: cover;
-  
-`
-export const Background2 = styled.div`
-  background-image: url("https://i.postimg.cc/nrV0zp0p/IMG-3954.avif");
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-`
-export const Background3 = styled.div`
-  background-image: url("https://i.postimg.cc/nrV0zp0p/IMG-3954.avif");
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-`
-export const Background4 = styled.div`
-  background-image: url("https://i.postimg.cc/nrV0zp0p/IMG-3954.avif");
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-size: cover;
-`
 
+
+`;
 
 export const Navigation = styled.nav`
   position: absolute;
@@ -70,13 +47,14 @@ export const Navigation = styled.nav`
   left: 50%;
   transform: translate(-50%, -50%);
   width: 30vw;
+  margin-left: 20vw;
   padding: 30px;
   border-radius: 1%;
   text-align: center;
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 0.5);
 
-  @media(max-width: ${({theme}) => theme.media.phone}){
+  @media (max-width: ${({ theme }) => theme.media.phone}) {
     width: 60vw;
   }
 `;
@@ -85,7 +63,7 @@ export const NavigationTitle = styled.h1`
   font-size: 1.5vw;
   font-weight: bold;
 
-  @media(max-width: ${({theme}) => theme.media.phone}){
+  @media (max-width: ${({ theme }) => theme.media.phone}) {
     font-size: 3vw;
   }
 `;
@@ -105,8 +83,7 @@ export const Lists = styled.li`
     color: red;
   }
 
-  
-  @media(max-width: ${({theme}) => theme.media.phone}){
+  @media (max-width: ${({ theme }) => theme.media.phone}) {
     padding: 4vw;
   }
 `;
@@ -114,9 +91,9 @@ export const Lists = styled.li`
 export const StyledLink = styled(Link)`
   text-decoration: none;
   font-size: 1.5vw;
+  margin: 20px;
 
-  
-  @media(max-width: ${({theme}) => theme.media.phone}){
+  @media (max-width: ${({ theme }) => theme.media.phone}) {
     font-size: 3vw;
   }
 `;
