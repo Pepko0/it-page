@@ -25,7 +25,7 @@ export const Container = styled.div`
   justify-content: center;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  border: solid white;
+  grid-gap: 10px;
 
   @media(max-width: ${({theme}) => theme.media.phone}){
     grid-template-columns: 1fr;
@@ -39,7 +39,7 @@ export const Background1 = styled.div`
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  border: solid 5px white;
+  
 `
 export const Background2 = styled.div`
   background-image: url("https://i.postimg.cc/nrV0zp0p/IMG-3954.avif");
@@ -47,7 +47,6 @@ export const Background2 = styled.div`
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  border: solid 5px white;
 `
 export const Background3 = styled.div`
   background-image: url("https://i.postimg.cc/nrV0zp0p/IMG-3954.avif");
@@ -55,7 +54,6 @@ export const Background3 = styled.div`
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  border: solid 5px white;
 `
 export const Background4 = styled.div`
   background-image: url("https://i.postimg.cc/nrV0zp0p/IMG-3954.avif");
@@ -63,7 +61,6 @@ export const Background4 = styled.div`
   height: 100%;
   background-repeat: no-repeat;
   background-size: cover;
-  border: solid 5px white; 
 `
 
 
