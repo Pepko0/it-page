@@ -50,7 +50,7 @@ export const LogoGH = styled.svg`
   }
 
   @media(max-width: ${({theme}) => theme.media.phone}){
-    width:  10w;
+    width:  10vw;
 }
 `
 
