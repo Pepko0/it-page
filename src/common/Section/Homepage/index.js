@@ -11,7 +11,6 @@ import {
 const Homepage = () => {
   return (
     <Container>
-      <Background>
         <Navigation>
           <NavigationTitle>
             Witaj na mojej stronie internetowej! Wybierz co chcesz zrobić
@@ -25,7 +24,6 @@ const Homepage = () => {
             </Lists>
           </Ul>
         </Navigation>
-      </Background>
     </Container>
   );
 };

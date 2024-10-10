@@ -1,20 +1,5 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-/*
-export const Container = styled.div`
-  height: 50vh;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  // border: solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  background-image: url("https://i.postimg.cc/nrV0zp0p/IMG-3954.avif");
-  //box-shadow: 10px 10px 26px 50px #fc6299 inset;
-`;
-*/
 
 export const Container = styled.div`
   margin: auto;
@@ -24,10 +9,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   grid-gap: 10px;
-
-  @media(max-width: ${({theme}) => theme.media.phone}){
-   
-  }
 `;
 
 export const Background = styled.div`
@@ -56,6 +37,7 @@ export const Navigation = styled.nav`
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
     width: 60vw;
+    margin-left: 0;
   }
 `;
 
