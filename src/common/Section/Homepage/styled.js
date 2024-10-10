@@ -17,35 +17,53 @@ export const Container = styled.div`
 */
 
 export const Container = styled.div`
+  margin: auto;
+  width: 80vw;
   height: 100vh;
   display: grid;
   align-items: center;
   justify-content: center;
-  border: solid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
+  border: solid white;
 
+  @media(max-width: ${({theme}) => theme.media.phone}){
+    grid-template-columns: 1fr;
+    width: 90vw;
+  }
 `;
 
 export const Background1 = styled.div`
-  background-color: red;
+  background-image: url("https://i.postimg.cc/nrV0zp0p/IMG-3954.avif");
   width: 100%;
   height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: solid 5px white;
 `
 export const Background2 = styled.div`
-  background-color: green;
+  background-image: url("https://i.postimg.cc/nrV0zp0p/IMG-3954.avif");
   width: 100%;
   height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: solid 5px white;
 `
 export const Background3 = styled.div`
-  background-color: black;
+  background-image: url("https://i.postimg.cc/nrV0zp0p/IMG-3954.avif");
   width: 100%;
   height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: solid 5px white;
 `
 export const Background4 = styled.div`
-  background-color: yellow;
+  background-image: url("https://i.postimg.cc/nrV0zp0p/IMG-3954.avif");
   width: 100%;
   height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: solid 5px white; 
 `
 
 
@@ -54,22 +72,25 @@ export const Navigation = styled.nav`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 40vw;
+  width: 30vw;
   padding: 30px;
   border-radius: 1%;
   text-align: center;
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 0.5);
+
+  @media(max-width: ${({theme}) => theme.media.phone}){
+    width: 60vw;
+  }
 `;
 
 export const NavigationTitle = styled.h1`
-  font-size: 2vw;
+  font-size: 1.5vw;
   font-weight: bold;
-`;
 
-export const Button = styled.button`
-  width: 100px;
-  margin: 10px;
+  @media(max-width: ${({theme}) => theme.media.phone}){
+    font-size: 3vw;
+  }
 `;
 
 export const Ul = styled.ul`
@@ -79,16 +100,26 @@ export const Ul = styled.ul`
 export const Lists = styled.li`
   list-style-type: none;
   background-color: ${({ theme }) => theme.color.lightgray};
-  padding: 15px;
+  padding: 1vw;
   border-radius: 10px;
   margin: 10px;
 
   :hover {
     color: red;
   }
+
+  
+  @media(max-width: ${({theme}) => theme.media.phone}){
+    padding: 4vw;
+  }
 `;
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  font-size: 2vw;
+  font-size: 1.5vw;
+
+  
+  @media(max-width: ${({theme}) => theme.media.phone}){
+    font-size: 3vw;
+  }
 `;
