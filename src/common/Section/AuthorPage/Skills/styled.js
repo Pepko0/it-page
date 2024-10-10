@@ -15,7 +15,7 @@ export const Title = styled.h2`
   border-bottom: solid 1px;
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    font-size: 4vw;
+    font-size: 2vw;
   }
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
@@ -48,9 +48,6 @@ export const List = styled.li`
   font-size:1.3vw;
   margin-bottom: 15px;
 
-  @media(max-width: ${({theme}) => theme.media.tablet}){
-    font-size: 2.5vw;
-  }
 
   @media(max-width: ${({theme}) => theme.media.phone}){
     font-size: 3.5vw;

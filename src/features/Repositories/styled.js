@@ -10,12 +10,8 @@ export const RepositoriesContent = styled.div`
 export const Title = styled.h2`
   font-family: ${({ theme }) => theme.font.inter};
   font-weight: 900;
-  font-size: 1.5vw;
+  font-size: 2vw;
   margin-top: 5px;
-
-  @media(max-width: ${({theme}) => theme.media.tablet}){
-    font-size: 3.5vw;
-  }
 
   @media(max-width: ${({theme}) => theme.media.phone}){
     font-size: 4vw;

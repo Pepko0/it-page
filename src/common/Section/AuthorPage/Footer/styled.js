@@ -42,7 +42,7 @@ export const LogoGH = styled.svg`
   }
 
   @media(max-width: ${({theme}) => theme.media.tablet}){
-    width:  12vw;
+    width:  8vw;
 
     :hover {
     fill: ${({theme}) => theme.color.black};
@@ -50,7 +50,7 @@ export const LogoGH = styled.svg`
   }
 
   @media(max-width: ${({theme}) => theme.media.phone}){
-    width:  14vw;
+    width:  10w;
 }
 `
 
@@ -63,7 +63,7 @@ export const LogoLk = styled.svg`
   }
 
   @media(max-width: ${({theme}) => theme.media.tablet}){
-    width:  12vw;
+    width:  8vw;
 
     :hover {
       fill: ${({theme}) => theme.color.black};
@@ -71,6 +71,6 @@ export const LogoLk = styled.svg`
   }
 
   @media(max-width: ${({theme}) => theme.media.phone}){
-    width:  14vw;
+    width:  10vw;
 }
 `

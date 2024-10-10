@@ -5,7 +5,6 @@ import {
   StyledLink,
   Lists,
   Ul,
-  Background,
 } from "./styled";
 import HomePageHeader from "./Header";
 
