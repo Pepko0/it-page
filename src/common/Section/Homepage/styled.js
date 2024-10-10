@@ -3,23 +3,12 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   margin: auto;
-  width: 80vw;
+  width: 90vw;
   height: 100vh;
   display: grid;
   align-items: center;
   justify-content: center;
   grid-gap: 10px;
-`;
-
-export const Background = styled.div`
-  background-image: url("https://i.postimg.cc/nrV0zp0p/IMG-3954.avif");
-  width: 80vw;
-  height: 50vw;
-  margin: auto;
-  background-repeat: no-repeat;
-  background-size: cover;
-
-
 `;
 
 export const Navigation = styled.nav`
