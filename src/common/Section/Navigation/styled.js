@@ -3,7 +3,7 @@ import { Link} from "react-router-dom";
 
 export const Container = styled.nav`
     width: 100%;
-    position: fixed;
+    position: absolute;
     top: 0;
     z-index: 1000;
     background-color: ${({theme}) => theme.color.mercury};

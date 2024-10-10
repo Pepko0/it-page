@@ -12,6 +12,6 @@ html {
       
       body {
         background: ${({ theme }) => theme.color.lightgray};
-        font-family: ${({theme}) => theme.font.inter};
+        font-family: ${({ theme }) => theme.font.inter};
       }
 `;

@@ -1,25 +1,54 @@
-import { Container, Navigation, NavigationTitle } from "./styled";
-import {  Link } from "react-router-dom";
-
+import {
+  Container,
+  Navigation,
+  NavigationTitle,
+  StyledLink,
+  Lists,
+  Ul,
+  Background1,
+  Background2,
+  Background3,
+  Background4,
+  
+} from "./styled";
 
 const Homepage = () => {
   return (
+    /*
     <Container>
       <Navigation>
-        <NavigationTitle>Wybierz co chcesz zrobić</NavigationTitle>
-            <ul>
-              <li>
-                <Link to="/Author">O autorze</Link>
-              </li>
-              <li>
-              <Link to="/Service">Współpraca</Link>
-              </li>
-            </ul>
-
+        <NavigationTitle>Witaj na mojej stronie internetowej! Wybierz co chcesz zrobić</NavigationTitle>
+        <Ul>
+          <Lists>
+            <StyledLink to="/Author">O autorze</StyledLink>
+          </Lists>
+          <Lists>
+            <StyledLink to="/Service">Współpraca</StyledLink>
+          </Lists>
+        </Ul>
       </Navigation>
     </Container>
-    
+    */
 
+    <Container>
+      <Background1/>
+      <Background2/>
+      <Background3/>
+      <Background4/>
+
+      <Navigation>
+        <NavigationTitle>Witaj na mojej stronie internetowej! Wybierz co chcesz zrobić</NavigationTitle>
+        <Ul>
+          <Lists>
+            <StyledLink to="/Author">O autorze</StyledLink>
+          </Lists>
+          <Lists>
+            <StyledLink to="/Service">Współpraca</StyledLink>
+          </Lists>
+        </Ul>
+      </Navigation>
+      
+    </Container>
   );
 };
 
