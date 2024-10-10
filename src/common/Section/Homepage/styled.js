@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 export const Container = styled.div`
   margin: auto;
   width: 90vw;
-  height: 100vh;
   display: grid;
   align-items: center;
   justify-content: center;
   grid-gap: 10px;
+
 `;
 
 export const Navigation = styled.nav`
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -1%);
   width: 30vw;
   margin-left: 20vw;
   padding: 30px;
@@ -27,6 +27,10 @@ export const Navigation = styled.nav`
   @media (max-width: ${({ theme }) => theme.media.phone}) {
     width: 60vw;
     margin-left: 0;
+    position: relative;
+    transform: translate(0%, 0%);
+    top: 0%;
+  left: 0%;
   }
 `;
 
