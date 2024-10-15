@@ -1,6 +1,7 @@
 export const theme = {
     font: {
         inter: ' "Inter", sans-serif ',
+        dm_serif: '"DM Serif Text", serif'
     },
 
     
