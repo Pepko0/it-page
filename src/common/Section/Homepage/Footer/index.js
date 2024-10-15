@@ -46,10 +46,10 @@ const Footer = () => {
       </BlockLeft>
       <BlockRight>
         <Link href="mailto: k.lewkosga@gmail.com">
-          {" "}
           <svg
-            width="68"
-            height="68"
+            width="40"
+            margin=" 0 auto"
+            height="40"
             fill="#000000"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -60,11 +60,12 @@ const Footer = () => {
               clip-rule="evenodd"
             ></path>
           </svg>
+          <p>k.lewkosga@gmail.com</p>
         </Link>
         <Link href="tel: +48667804407">
           <svg
-            width="68"
-            height="68"
+            width="40"
+            height="40"
             fill="#000000"
             viewBox="0 0 24 24"
             xmlns="http://www.w3.org/2000/svg"
@@ -75,6 +76,7 @@ const Footer = () => {
               clip-rule="evenodd"
             ></path>
           </svg>
+          <p>667 804 407</p>
         </Link>
       </BlockRight>
     </Container>

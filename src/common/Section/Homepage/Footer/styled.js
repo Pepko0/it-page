@@ -12,7 +12,7 @@ export const Container = styled.footer`
 `;
 
 export const BlockRight = styled.div`
-  padding: 50px;
+  
   align-items: center;
   justify-content: center;
   display: flex;
@@ -31,7 +31,9 @@ export const Title = styled.h1`
   margin-top: 0px;
 `;
 
-export const Text = styled.p``;
+export const Text = styled.p`
+    
+`;
 
 export const LogoGH = styled.svg`
   width: 75px;
@@ -78,7 +80,10 @@ export const LogoLk = styled.svg`
 export const Link = styled.a`
     text-decoration: none; 
     padding: 50px;
+    width: 250px;
     background-color: white;
     border-radius: 20px 0 20px 0;
-    display: inline-block;
+    margin: 20px;
+    text-align: center;
+
 `
