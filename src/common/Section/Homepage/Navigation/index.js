@@ -10,7 +10,7 @@ import {
 
 const Navigation = () => (
   <Container>
-    <Image src="https://i.postimg.cc/0QQ20867/homepage.jpg" />
+    <Image src="https://i.postimg.cc/sD9LJ5pC/homepage2.jpg" />
     <Image src="https://i.postimg.cc/SQdHpWvQ/homepage5.jpg" />
     <Image src="https://i.postimg.cc/5NkGXfJZ/IMG-3267.jpg" />
     

@@ -7,6 +7,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr ;
   justify-content: center;
+  align-items: center;
   grid-gap: 20px;
  // border: solid;
   
@@ -15,7 +16,7 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  */s
+  */
 `;
 
 export const Image = styled.img`
@@ -28,7 +29,6 @@ export const Image = styled.img`
 export const Nav = styled.nav`
   position: absolute;
   width: 30vw;
-  // margin-left: 50vw;
   margin: auto 50vw;
   padding: 30px;
   border-radius: 1%;
