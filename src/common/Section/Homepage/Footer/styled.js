@@ -11,9 +11,17 @@ export const Container = styled.footer`
   bottom: 0;
 `;
 
-export const Block = styled.div`
+export const BlockRight = styled.div`
   padding: 50px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 `;
+
+export const BlockLeft = styled.div`
+  padding: 50px;
+
+`
 
 export const Title = styled.h1`
   font-family: ${({ theme }) => theme.font.dm_serif};
@@ -65,3 +73,12 @@ export const LogoLk = styled.svg`
     width: 10vw;
   }
 `;
+
+
+export const Link = styled.a`
+    text-decoration: none; 
+    padding: 50px;
+    background-color: white;
+    border-radius: 20px 0 20px 0;
+    display: inline-block;
+`
