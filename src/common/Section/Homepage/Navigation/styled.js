@@ -5,25 +5,49 @@ export const Container = styled.div`
   margin: auto;
   width: 90vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr ;
+  grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
   align-items: center;
   grid-gap: 20px;
- // border: solid;
-  
-  /*
-  background-image: url("https://i.postimg.cc/0QQ20867/homepage.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  */
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+  }
+
+  @media(max-width: ${({theme}) => theme.media.phone}){
+    background-image: url("https://i.postimg.cc/SQdHpWvQ/homepage5.jpg") ;
+    background-size: cover; /* Dopasowuje obrazek do rozmiaru elementu */
+    background-repeat: no-repeat; /* Zapobiega powielaniu obrazka */
+    padding: 20px;
+  }
 `;
 
 export const Image = styled.img`
   width: 100%;
   height: 400px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Dodaje cień pod obrazem */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   margin: auto;
+`;
+
+export const ImageTabletOff = styled.img`
+  width: 100%;
+  height: 400px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  margin: auto;
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    display: none;
+  }
+`;
+
+export const ImagePhoneOff = styled.img`
+  width: 100%;
+  height: 400px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  margin: auto;
+  @media (max-width: ${({ theme }) => theme.media.phone}) {
+    display: none;
+  }
 `;
 
 export const Nav = styled.nav`
@@ -37,12 +61,8 @@ export const Nav = styled.nav`
   background-color: rgba(255, 255, 255, 0.5);
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
-    width: 60vw;
-    margin-left: 0;
+    width: 70vw;
     position: relative;
-    transform: translate(0%, 0%);
-    top: 0%;
-    left: 0%;
   }
 `;
 

@@ -6,13 +6,15 @@ import {
   Lists,
   Ul,
   Image,
+  ImageTabletOff,
+  ImagePhoneOff,
 } from "./styled";
 
 const Navigation = () => (
   <Container>
-    <Image src="https://i.postimg.cc/sD9LJ5pC/homepage2.jpg" />
-    <Image src="https://i.postimg.cc/SQdHpWvQ/homepage5.jpg" />
-    <Image src="https://i.postimg.cc/5NkGXfJZ/IMG-3267.jpg" />
+    <ImagePhoneOff src="https://i.postimg.cc/sD9LJ5pC/homepage2.jpg" />
+    <ImagePhoneOff src="https://i.postimg.cc/SQdHpWvQ/homepage5.jpg" />
+    <ImageTabletOff src="https://i.postimg.cc/5NkGXfJZ/IMG-3267.jpg" />
     
     <Nav>
       <NavigationTitle>
