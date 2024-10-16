@@ -35,6 +35,15 @@ export const Title = styled.h1`
   font-size: 50px;
   margin-bottom: 5px;
   margin-top: 0px;
+  
+
+  @media(max-width: ${({theme}) => theme.media.tablet}){
+    font-size: 40px;
+  }
+
+  @media(max-width: ${({theme}) => theme.media.phone}){
+    font-size: 30px;
+  }
 `;
 
 export const Text = styled.p``;
