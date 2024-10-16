@@ -44,7 +44,7 @@ const Footer = () => {
           </a>
         </span>
       </BlockLeft>
-
+      <Contact />
       
     </Container>
   );
