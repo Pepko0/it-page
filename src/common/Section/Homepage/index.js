@@ -6,7 +6,7 @@ const Homepage = () => {
   return (
     <>
       <HomePageHeader />
-      <Navigation />
+
       <Footer />
 
     </>
