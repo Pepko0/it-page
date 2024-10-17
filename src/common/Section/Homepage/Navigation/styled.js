@@ -63,6 +63,7 @@ export const Nav = styled.nav`
   @media (max-width: ${({ theme }) => theme.media.phone}) {
     width: 70vw;
     position: relative;
+    margin: auto;
   }
 `;
 
