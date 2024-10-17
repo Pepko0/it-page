@@ -22,7 +22,7 @@ export const Link = styled.a`
   }
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
-    width: 30vw;
+    max-width: 30vw;
     padding: 10px;
   }
 `;
@@ -37,9 +37,6 @@ export const ContactLogo = styled.svg`
     width: 30px;
   }
 
-  @media (max-width: ${({ theme }) => theme.media.phone}) {
-    width: 20px;
-  }
 `;
 
 
@@ -50,5 +47,9 @@ export const ContactText = styled.p`
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     font-size: 1.5vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.phone}) {
+    display: none;
   }
 `;

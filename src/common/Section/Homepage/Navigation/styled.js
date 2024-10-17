@@ -16,9 +16,10 @@ export const Container = styled.div`
   }
 
   @media(max-width: ${({theme}) => theme.media.phone}){
+    grid-template-columns: 0fr;
     background-image: url("https://i.postimg.cc/SQdHpWvQ/homepage5.jpg") ;
-    background-size: cover; /* Dopasowuje obrazek do rozmiaru elementu */
-    background-repeat: no-repeat; /* Zapobiega powielaniu obrazka */
+    background-size: cover;
+    background-repeat: no-repeat; 
     padding: 20px;
   }
 `;
@@ -63,7 +64,7 @@ export const Nav = styled.nav`
   @media (max-width: ${({ theme }) => theme.media.phone}) {
     width: 70vw;
     position: relative;
-    margin: auto;
+    margin: 5px auto;
   }
 `;
 
