@@ -7,7 +7,7 @@ const Mail = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 1045);
+      setIsMobile(window.innerWidth < 1024);
     };
     handleResize();
     window.removeEventListener("resize", handleResize);
