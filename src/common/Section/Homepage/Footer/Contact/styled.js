@@ -36,10 +36,7 @@ export const ContactLogo = styled.svg`
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     width: 30px;
   }
-
 `;
-
-
 
 export const ContactText = styled.p`
   color: ${({ theme }) => theme.color.black};
