@@ -83,10 +83,8 @@ export const Ul = styled.ul`
 
 export const Lists = styled.li`
   list-style-type: none;
-  background-color: ${({ theme }) => theme.color.lightgray};
-  padding: 1vw;
-  border-radius: 10px;
-  margin: 10px;
+  padding: 10px;
+  margin: 5px;
 
   :hover {
     color: red;
@@ -99,8 +97,9 @@ export const Lists = styled.li`
 
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  font-size: 1.5vw;
-  margin: 20px;
+  font-size: 2vw;
+  margin: 10px;
+  border-bottom: solid 1px;
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
     font-size: 3vw;
