@@ -91,17 +91,36 @@ export const Lists = styled.li`
   }
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
-    padding: 4vw;
+    padding: 1vw;
   }
 `;
 
 export const StyledLink = styled(Link)`
+  font-family: ${({theme}) => theme.font.dm_serif};
   text-decoration: none;
-  font-size: 2vw;
+  width: 20vw;
+  font-size: 25px;
   margin: 10px;
-  border-bottom: solid 1px;
+  padding: 10px 20px;
+  background-color: ${({theme}) => theme.color.lightgray};
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: ${({theme}) => theme.color.mainblue};
+  }
+  
+  
+  //border-bottom: solid 1px;
+
+
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
     font-size: 3vw;
+    width: 40vw;
+    margin: 0px
   }
 `;
