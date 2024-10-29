@@ -13,7 +13,7 @@ import {
 const Navigation = () => (
   <Container>
 
-    <ImagePhoneOff src="https://i.postimg.cc/sD9LJ5pC/homepage2.jpg" />
+    <ImagePhoneOff src="https://i.postimg.cc/j2NvwtBP/modern-laptop-with-programming-symbols-no-people-blue-and-purple-colors-wider-image.jpg" />
     <ImagePhoneOff src="https://i.postimg.cc/SQdHpWvQ/homepage5.jpg" />
     <ImageTabletOff src="https://i.postimg.cc/5NkGXfJZ/IMG-3267.jpg" />
     

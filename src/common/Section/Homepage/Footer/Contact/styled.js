@@ -30,8 +30,8 @@ export const Link = styled.a`
 export const ContactLogo = styled.svg`
   width: 40px;
   height: 40px;
-
   fill: ${({ theme }) => theme.color.black};
+  
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     width: 30px;
