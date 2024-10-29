@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   margin: auto;
-  width: 90vw;
+  width: 80vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
@@ -53,13 +53,17 @@ export const ImagePhoneOff = styled.img`
 
 export const Nav = styled.nav`
   position: absolute;
-  width: 30vw;
-  margin: auto 50vw;
-  padding: 30px;
+  width: 25vw;
+  margin: auto 40vw;
+  padding: 15px;
   border-radius: 1%;
   text-align: center;
   backdrop-filter: blur(5px);
   background-color: rgba(255, 255, 255, 0.5);
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    width: 35vw;
+  }
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
     width: 70vw;
@@ -69,11 +73,15 @@ export const Nav = styled.nav`
 `;
 
 export const NavigationTitle = styled.h1`
-  font-size: 1.5vw;
+  font-size: 22px;
   font-weight: bold;
 
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    font-size: 15px;
+  }
+
   @media (max-width: ${({ theme }) => theme.media.phone}) {
-    font-size: 3vw;
+    font-size: 15px;
   }
 `;
 
@@ -98,7 +106,7 @@ export const Lists = styled.li`
 export const StyledLink = styled(Link)`
   font-family: ${({theme}) => theme.font.dm_serif};
   text-decoration: none;
-  width: 20vw;
+  width: 15vw;
   font-size: 25px;
   margin: 10px;
   padding: 10px 20px;
@@ -113,13 +121,13 @@ export const StyledLink = styled(Link)`
     background-color: ${({theme}) => theme.color.mainblue};
   }
   
-  
-  //border-bottom: solid 1px;
-
-
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    font-size: 15px;
+    width: 25vw;
+  }
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
-    font-size: 3vw;
+    font-size: 2vw;
     width: 40vw;
     margin: 0px
   }
