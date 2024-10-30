@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
-  max-width: 90vw;
+    width:  ${({theme}) => theme.width.component};
   margin: 100px auto 40px;
   display: grid;
   grid-template-columns: 1fr 3fr;

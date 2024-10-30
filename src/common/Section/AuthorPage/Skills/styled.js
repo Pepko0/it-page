@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  max-width: 90vw;
+    width:  ${({theme}) => theme.width.component};
   margin: 60px auto;
   background-color: white;
   box-shadow: 5px 5px 5px 0px #eaeaea;

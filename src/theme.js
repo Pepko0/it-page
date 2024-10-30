@@ -22,5 +22,9 @@ export const theme = {
         linkedine: "#0a66c2"
     },
 
+
+    width: {
+        component: "80vw"
+    }
 }
 

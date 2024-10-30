@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   margin: auto;
-  width: 80vw;
+  width:  ${({theme}) => theme.width.component};
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: center;
@@ -81,7 +81,7 @@ export const NavigationTitle = styled.h1`
   }
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
-    font-size: 15px;
+    font-size: 5vw;
   }
 `;
 
@@ -127,7 +127,7 @@ export const StyledLink = styled(Link)`
   }
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
-    font-size: 2vw;
+    font-size: 4vw;
     width: 40vw;
     margin: 0px
   }
