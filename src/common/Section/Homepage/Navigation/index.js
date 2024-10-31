@@ -23,10 +23,10 @@ const Navigation = () => (
       </NavigationTitle>
       <Ul>
         <Lists>
-          <StyledLink to="/Author">O autorze</StyledLink>
+          <StyledLink title="Open page about Author" to="/Author">O autorze</StyledLink>
         </Lists>
         <Lists>
-          <StyledLink to="/Service">Współpraca</StyledLink>
+          <StyledLink title="Open service page" to="/Service">Współpraca</StyledLink>
         </Lists>
       </Ul>
     </Nav>

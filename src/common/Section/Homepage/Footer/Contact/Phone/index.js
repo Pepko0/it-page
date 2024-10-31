@@ -37,6 +37,7 @@ const Phone = () => {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
         href="tel: +48667804407"
+        title="Call Kacper Lewko"
       >
         <ContactLogo viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           {hovered ? (

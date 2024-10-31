@@ -34,6 +34,7 @@ const Mail = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       href="mailto: k.lewkosga@gmail.com"
+      title="Send E-mail for Kacper Lewko"
     >
       <ContactLogo viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
         {hovered ? (

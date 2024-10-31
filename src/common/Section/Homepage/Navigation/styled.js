@@ -108,7 +108,6 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   width: 15vw;
   font-size: 25px;
-  margin: 10px;
   padding: 10px 20px;
   background-color: ${({theme}) => theme.color.lightgray};
   border: none;
@@ -116,9 +115,12 @@ export const StyledLink = styled(Link)`
   display: inline-block;
   text-align: center;
   transition: background-color 0.3s;
+  color: ${({theme}) => theme.color.black};
+
 
   &:hover {
-    background-color: ${({theme}) => theme.color.mainblue};
+    background-color: ${({theme}) => theme.color.gray};
+    color: ${({theme}) => theme.color.white}
   }
   
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
