@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.footer`
   width: 100%;
-  background-color: ${({ theme }) => theme.color.black};
+  background-color: ${({ theme }) => theme.color.lightgray};
   color: ${({ theme }) => theme.color.white};
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -29,6 +29,7 @@ export const Title = styled.h1`
   font-size: 50px;
   margin-bottom: 5px;
   margin-top: 0px;
+  color: ${({theme}) => theme.color.black};
   
 
   @media(max-width: ${({theme}) => theme.media.tablet}){
@@ -40,4 +41,6 @@ export const Title = styled.h1`
   }
 `;
 
-export const Text = styled.p``;
+export const Text = styled.p`
+  color: ${({theme}) => theme.color.black};
+`;

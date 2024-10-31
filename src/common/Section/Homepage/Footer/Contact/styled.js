@@ -14,7 +14,7 @@ export const Link = styled.a`
   border-radius: 20px 0 20px 0;
   margin: 20px;
   text-align: center;
-  box-shadow: 10px 10px 0px 0px #998674;
+  box-shadow: 10px 10px 0px 0px #4f4f4f;
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     width: 25vw;
@@ -22,7 +22,6 @@ export const Link = styled.a`
   }
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
-    max-width: 30vw;
     padding: 10px;
   }
 `;
@@ -31,7 +30,6 @@ export const ContactLogo = styled.svg`
   width: 40px;
   height: 40px;
   fill: ${({ theme }) => theme.color.black};
-  
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     width: 30px;
