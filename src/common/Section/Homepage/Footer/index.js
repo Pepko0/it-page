@@ -1,6 +1,6 @@
 import Contact from "./Contact";
 import SocialMedia from "../../SocialMedia";
-import { Container, Title, Text, BlockLeft, LogoGH, LogoLk } from "./styled";
+import { Container, Title, Text, BlockLeft } from "./styled";
 
 const Footer = () => (
   <Container>
