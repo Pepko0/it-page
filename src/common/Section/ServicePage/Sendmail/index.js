@@ -8,7 +8,7 @@ const Sendmail = () => {
   const [message, setMessage] = useState("");
   const [lastName, setLastName] = useState("");
   const [number, setNumber] = useState("");
-  const [company, setCompany] = useState("")
+  const [company, setCompany] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,40 +46,39 @@ const Sendmail = () => {
   return (
     <Container onSubmit={handleSubmit}>
       <div>
-      <TextLabel>Name:</TextLabel>
-          <Input
-            type="text"
-            placeholder="Your Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-
+        <TextLabel>Name:</TextLabel>
+        <Input
+          type="text"
+          placeholder="Your Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
       </div>
       <div>
-      <TextLabel>Last Name:</TextLabel>
-          <Input
-            type="text"
-            placeholder="Your Last Name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-          />
-
+        <TextLabel>Last Name:</TextLabel>
+        <Input
+          type="text"
+          placeholder="Your Last Name"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+        />
       </div>
       <div>
-      <TextLabel>Number:</TextLabel>
-          <Input
-            type="tel"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-            maxLength="15"
-            placeholder="+48 123 456 789"
-            value={number}
-            onChange={(e) => setNumber(e.target.value)}
-          />
-
+        <TextLabel>Number:</TextLabel>
+        <Input
+          type="tel"
+          /*
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
+          maxLength="15"
+          */
+          placeholder="+48 123 456 789"
+          value={number}
+          onChange={(e) => setNumber(e.target.value)}
+        />
       </div>
 
       <div>
-      <TextLabel>E-mail:</TextLabel>
+        <TextLabel>E-mail:</TextLabel>
         <Input
           type="email"
           placeholder="Your Email"
@@ -89,25 +88,42 @@ const Sendmail = () => {
       </div>
 
       <div>
-      <TextLabel>Company Name *</TextLabel>
+        {" "}
+        <TextLabel>Are you a Company or Private?:</TextLabel>{" "}
+        <div>
+          {" "}
           <Input
-            type="text"
-            placeholder="Your Company Name"
-            value={company}
+            type="radio"
+            id="company"
+            name="userType"
+            value="Company"
+            checked={company === "Company"}
             onChange={(e) => setCompany(e.target.value)}
-          />
-
+          />{" "}
+          <label htmlFor="company">Company</label>{" "}
+        </div>{" "}
+        <div>
+          {" "}
+          <Input
+            type="radio"
+            id="private"
+            name="userType"
+            value="Private"
+            checked={company === "Private"}
+            onChange={(e) => setCompany(e.target.value)}
+          />{" "}
+          <label htmlFor="private">Private</label>{" "}
+        </div>{" "}
       </div>
-
       <div>
-      <TextLabel>Message:</TextLabel>
+        <TextLabel>Message:</TextLabel>
         <Message
           value={message}
           onChange={(e) => setMessage(e.target.value)}
           placeholder="Write Message"
         />
       </div>
-     
+      <button type="submits">Send Email</button>
     </Container>
   );
 };
@@ -118,3 +134,17 @@ export default Sendmail;
 
       <button type="submits">Send Email</button>
 */
+
+/*
+/*
+      <div>
+      <TextLabel>Company Name *</TextLabel>
+          <Input
+            type="text"
+            placeholder="Your Company Name"
+            value={company}
+            onChange={(e) => setCompany(e.target.value)}
+          />
+
+      </div>
+      */
