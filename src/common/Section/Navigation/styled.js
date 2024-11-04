@@ -3,7 +3,7 @@ import { Link} from "react-router-dom";
 
 export const Container = styled.nav`
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 0;
     z-index: 1000;
     background-color: ${({theme}) => theme.color.mercury};
@@ -12,6 +12,7 @@ export const Container = styled.nav`
     gap: 20px;
     padding: 20px;
     box-shadow: 5px 5px 5px 0px #EAEAEA;
+    margin-bottom: 20px;
 `
 
 export const StyledLink = styled(Link)`

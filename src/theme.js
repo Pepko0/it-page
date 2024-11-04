@@ -27,7 +27,8 @@ export const theme = {
 
 
     width: {
-        component: "80vw"
+        component: "80vw",
+        container: "80vw"
     }
 }
 
