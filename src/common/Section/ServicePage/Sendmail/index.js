@@ -1,12 +1,14 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-import { Container, TextLabel, Input } from "./styled";
+import { Container, TextLabel, Input, Message } from "./styled";
 
 const Sendmail = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [lastName, setLastName] = useState("");
+  const [number, setNumber] = useState("");
+  const [company, setCompany] = useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +23,8 @@ const Sendmail = () => {
       to_name: "Kacper",
       message: message,
       from_lastname: lastName,
+      from_number: number,
+      from_company: company,
     };
 
     emailjs
@@ -30,6 +34,9 @@ const Sendmail = () => {
         setName("");
         setEmail("");
         setMessage("");
+        setLastName("");
+        setNumber("");
+        setCompany("");
       })
       .catch((error) => {
         console.log("FAILED...", error);
@@ -58,6 +65,18 @@ const Sendmail = () => {
           />
 
       </div>
+      <div>
+      <TextLabel>Number:</TextLabel>
+          <Input
+            type="tel"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            maxLength="15"
+            placeholder="+48 123 456 789"
+            value={number}
+            onChange={(e) => setNumber(e.target.value)}
+          />
+
+      </div>
 
       <div>
       <TextLabel>E-mail:</TextLabel>
@@ -70,15 +89,32 @@ const Sendmail = () => {
       </div>
 
       <div>
+      <TextLabel>Company Name *</TextLabel>
+          <Input
+            type="text"
+            placeholder="Your Company Name"
+            value={company}
+            onChange={(e) => setCompany(e.target.value)}
+          />
+
+      </div>
+
+      <div>
       <TextLabel>Message:</TextLabel>
-        <textarea
+        <Message
           value={message}
           onChange={(e) => setMessage(e.target.value)}
+          placeholder="Write Message"
         />
       </div>
-      <button type="submit">Send Email</button>
+     
     </Container>
   );
 };
 
 export default Sendmail;
+
+/*
+
+      <button type="submits">Send Email</button>
+*/

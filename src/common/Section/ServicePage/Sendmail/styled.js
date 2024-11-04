@@ -21,6 +21,14 @@ export const Input = styled.input`
     font-size: 20px;
     width: 100%;
     padding: 10px;
+    border: none;
+`
+
+export const Message = styled.textarea`
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    resize: none;
 `
 
 
