@@ -1,11 +1,11 @@
 import Navigation from "../Navigation";
 
 const Service = () => {
-    return(
-        <Navigation />
-
-    )
-
-}
+  return (
+    <>
+      <Navigation />
+    </>
+  );
+};
 
 export default Service;
