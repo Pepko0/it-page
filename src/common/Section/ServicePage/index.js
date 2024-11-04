@@ -51,6 +51,9 @@ const Service = () => {
   };
 
   return (
+    <>
+    <Navigation />
+    
     <form onSubmit={handleSubmit}>
       <div>
         <input
@@ -78,6 +81,7 @@ const Service = () => {
       </div>
       <button type="submit">Send Email</button>
     </form>
+   </>
   );
 };
 
