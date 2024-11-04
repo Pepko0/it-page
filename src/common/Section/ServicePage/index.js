@@ -1,71 +1,77 @@
 import Navigation from "../Navigation";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import { useState } from "react";
 
 const Service = () => {
-  
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  /*
     const [formData, setFormData] = useState({
         name: "",
         email: "",
         message: ""
     })  
 
+   */
+
+  /*
     const handleChange = (e) => {
         const {name, value} = e.target;
         setFormData({...formData, [name]: value});
     };
+    */
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", formData, "YORUR_USER_ID")
-        .then((response) => {
-            console.log("SUCCESS!" , response.status, response.text);
-        })
-        .catch((error) => {
-            console.log("FAILED...", error);
-        });
-    };   
+    const service_id = "service_1va29ae";
+    const template_id = "template_fn3p838";
+    const user_id = "bouZ6eRw05NW91fRJ";
 
-    return (
-    <>
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      to_name: "Web Wizard",
+      message: message,
+    };
 
+    emailjs
+      .send(service_id, template_id, templateParams, user_id)
+      .then((response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        setName("");
+        setEmail("");
+        setMessage("");
+      })
+      .catch((error) => {
+        console.log("FAILED...", error);
+      });
+  };
 
-      <form onSubmit={handleSubmit}>
-      <div margin-top = "40px" >
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="message">Message:</label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-        />
-      </div>
-      <button type="submit">Send</button>
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Your Name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+
+      <input
+        type="email"
+        placeholder="Your Email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+
+      <textarea 
+      value={message} 
+      onChange={(e) => setMessage(e.target.value)} />
+
+      <button type="submit">Send Email</button>
     </form>
-  
-
-    </>
   );
 };
 
