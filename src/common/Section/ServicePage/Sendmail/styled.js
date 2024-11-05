@@ -47,3 +47,14 @@ export const Message = styled.textarea`
     }
 `
 
+export const Button = styled.button`
+    margin-top: 30px;
+    padding:20px;
+    width: 100%;
+    font-size: 30px;
+    background-color: ${({theme}) => theme.color.mainblue};
+    color: white;
+    border: none;
+    border-radius: 5px;
+
+`

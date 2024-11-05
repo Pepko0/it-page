@@ -1,6 +1,6 @@
 import emailjs from "@emailjs/browser";
 import { useEffect, useState, useRef } from "react";
-import { Container, ContainerUp, TextLabel, Input, Message } from "./styled";
+import { Container, ContainerUp, TextLabel, Input, Message, Button } from "./styled";
 
 const Sendmail = () => {
   const [name, setName] = useState("");
@@ -109,7 +109,7 @@ const Sendmail = () => {
 
         <div>
           {" "}
-          <TextLabel>Are you a Company or Private?:</TextLabel>{" "}
+          <TextLabel>Company or Private?</TextLabel>{" "}
           <div>
             {" "}
             <Input
@@ -161,7 +161,7 @@ const Sendmail = () => {
           placeholder="Write Message"
         />
       </div>
-      <button type="submits">Send Email</button>
+      <Button type="submits">Send Email</Button>
     </Container>
   );
 };
