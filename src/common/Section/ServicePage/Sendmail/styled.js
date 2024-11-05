@@ -7,7 +7,8 @@ export const Container = styled.form`
 export const ContainerUp = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2vw;
+    gap:20px;
+    margin-bottom: 20px;
 
     @media(max-width: ${({theme}) =>theme.media.phone}){
         grid-template-columns: 1fr;
