@@ -29,7 +29,7 @@ export const TextLabel = styled.label`
 export const Input = styled.input`
     font-size: 20px;
     width: 100%;
-    padding: 10px;
+    padding: 15px;
     border: none;
 
     @media(max-width: ${({theme}) =>theme.media.phone}){
