@@ -2,19 +2,16 @@ import styled from "styled-components";
 
 export const Container = styled.form`
     width: ${({theme}) => theme.width.container};
-   // border: solid;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2vw;
-   // padding: 10px;
 `
 
 export const TextLabel = styled.label`
     display: block;
     font-family: ${({theme}) => theme.font.dm_serif};
     font-size: 30px;
-   // margin: 0.5vw;
     color: ${({theme}) => theme.color.mainblue};
 `
 export const Input = styled.input`
