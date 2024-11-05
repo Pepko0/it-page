@@ -11,7 +11,6 @@ export const Container = styled.nav`
   justify-content: center;
   gap: 20px;
   padding: 20px;
-  box-shadow: 5px 5px 5px 0px #eaeaea;
   margin-bottom: 20px;
 `;
 

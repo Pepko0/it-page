@@ -20,6 +20,7 @@ export const TextLabel = styled.label`
     font-family: ${({theme}) => theme.font.dm_serif};
     font-size: 30px;
     color: ${({theme}) => theme.color.mainblue};
+    margin-bottom: 5px;
 
     @media(max-width: ${({theme}) =>theme.media.phone}){
         font-size: 25px;
@@ -49,7 +50,7 @@ export const Message = styled.textarea`
 `
 
 export const Button = styled.button`
-    margin-top: 30px;
+    margin: 30px 0;
     padding:20px;
     width: 100%;
     font-size: 30px;
@@ -58,6 +59,7 @@ export const Button = styled.button`
     border: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+
 
     &:hover {
         cursor: pointer;
