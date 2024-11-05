@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.footer`
   width: 100%;
-  background-color: ${({ theme }) => theme.color.lightgray};
+  background-color: ${({theme}) => theme.color.mercury};
   color: ${({ theme }) => theme.color.white};
   display: grid;
   grid-template-columns: 1fr 1fr;
