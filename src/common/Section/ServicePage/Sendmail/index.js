@@ -74,6 +74,7 @@ const Sendmail = () => {
             placeholder="Your Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required
           />
         </div>
         <div>
@@ -83,6 +84,7 @@ const Sendmail = () => {
             placeholder="Your Last Name"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
+            required
           />
         </div>
         <div>
@@ -94,6 +96,7 @@ const Sendmail = () => {
             placeholder="+48 123 456 789"
             value={number}
             onChange={(e) => setNumber(e.target.value)}
+            
           />
         </div>
 
@@ -104,6 +107,7 @@ const Sendmail = () => {
             placeholder="Your Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
           />
         </div>
 

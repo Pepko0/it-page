@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.form`
     width: ${({theme}) => theme.width.container};
-    margin: auto;
+    margin: 100px auto;
 `
 export const ContainerUp = styled.div`
     display: grid;
@@ -57,5 +57,11 @@ export const Button = styled.button`
     color: white;
     border: none;
     border-radius: 5px;
+    transition: background-color 0.3s;
+
+    &:hover {
+        cursor: pointer;
+        background-color: ${({theme}) => theme.color.cornflowerblue} ;
+    }
 
 `

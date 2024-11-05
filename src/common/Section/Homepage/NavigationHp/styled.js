@@ -94,9 +94,7 @@ export const Lists = styled.li`
   padding: 10px;
   margin: 5px;
 
-  :hover {
-    color: red;
-  }
+  
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
     padding: 1vw;
