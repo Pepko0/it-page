@@ -4,8 +4,8 @@ const SendingEmail = ({ message, onCancel, onClose }) => (
   <Container>
     <Modal>
       <PopupMessage>{message}</PopupMessage>{" "}
-      {onCancel && <Button onClick={onCancel}>Anuluj</Button>}{" "}
-      {onClose && <Button onClick={onClose}>Zamknij</Button>}
+      {onCancel && <Button onClick={onCancel}>Cancel</Button>}{" "}
+      {onClose && <Button onClick={onClose}>Close</Button>}
     </Modal>
   </Container>
 );

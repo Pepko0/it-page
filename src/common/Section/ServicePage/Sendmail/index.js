@@ -206,12 +206,12 @@ const Sendmail = () => {
       </Container>
 
       {sending && (
-        <SendingEmail message="Wysyłanie..." onCancel={handleCancel} />
+        <SendingEmail message="Sending..." onCancel={handleCancel} />
       )}
 
       {sent && (
         <SendingEmail
-          message="Wiadomośc wysłana prawidłowo."
+          message="Message sent correctly"
           onClose={closeSentPopup}
         />
       )}
