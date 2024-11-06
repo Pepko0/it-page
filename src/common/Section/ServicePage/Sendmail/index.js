@@ -131,7 +131,8 @@ const Sendmail = () => {
               type="tel"
               pattern="[0-9]{3} [0-9]{3} [0-9]{3}"
               maxLength="15"
-              placeholder="+48 123 456 789"
+              placeholder="123 456 789"
+              title="correct format: 123 456 789"
               value={number}
               onChange={(e) => setNumber(e.target.value)}
             />
