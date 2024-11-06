@@ -1,6 +1,14 @@
 import emailjs from "@emailjs/browser";
-import { useEffect, useState, useRef } from "react";
-import { Container, ContainerUp, TextLabel, Input, Message, Button } from "./styled";
+import SendingEmail from "../../../../features/SendingEmail";
+import { useState, useRef, useEffect } from "react";
+import {
+  Container,
+  ContainerUp,
+  TextLabel,
+  Input,
+  Message,
+  Button,
+} from "./styled";
 
 const Sendmail = () => {
   const [name, setName] = useState("");
@@ -11,12 +19,24 @@ const Sendmail = () => {
   const [company, setCompany] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [dueDate, setDueDate] = useState("");
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [cancelled, setCancelled] = useState(false);
 
+  const timeoutRef = useRef(null);
 
-
+  useEffect(() => {
+    if (cancelled) {
+      console.log("Anulowano wysyłanie wiadomości useEffect");
+      clearTimeout(timeoutRef.current);
+      setSending(false);
+    }
+  }, [cancelled]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setSending(true);
+    setCancelled(false);
 
     const service_id = "service_1va29ae";
     const template_id_admin = "template_fn3p838";
@@ -35,138 +55,167 @@ const Sendmail = () => {
       from_dueDate: dueDate,
     };
 
-    //for user
-    emailjs
-      .send(service_id, template_id_user, templateParams, user_id)
-      .then((response) => {
-        console.log("E-mail sent to the user!", response.status, response.text);
-      })
-      .catch((error) => {
-        console.log("Failed to send email to user...", error);
-      });
+    timeoutRef.current = setTimeout(() => {
+      //for user
+      emailjs
+        .send(service_id, template_id_user, templateParams, user_id)
+        .then((response) => {
+          console.log(
+            "E-mail sent to the user!",
+            response.status,
+            response.text
+          );
+        })
+        .catch((error) => {
+          console.log("Failed to send email to user...", error);
+        });
 
-    //For admin
-    emailjs
-      .send(service_id, template_id_admin, templateParams, user_id)
-      .then((response) => {
-        console.log("SUCCESS!", response.status, response.text);
-        setName("");
-        setEmail("");
-        setMessage("");
-        setLastName("");
-        setNumber("");
-        setCompany("");
-        setCompanyName("");
-        setDueDate("");
-      })
-      .catch((error) => {
-        console.log("FAILED...", error);
-      });
+      //For admin
+      emailjs
+        .send(service_id, template_id_admin, templateParams, user_id)
+        .then((response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          setName("");
+          setEmail("");
+          setMessage("");
+          setLastName("");
+          setNumber("");
+          setCompany("");
+          setCompanyName("");
+          setDueDate("");
+          setSending(false); 
+          setSent(true); 
+        })
+        .catch((error) => {
+          console.log("FAILED...", error);
+          setSending(false); 
+        });
+    }, 5000); 
+  };
+
+  const handleCancel = () => {
+    setCancelled(true);
+  };
+
+  const closeSentPopup = () => {
+    setSent(false);
   };
 
   return (
-    <Container onSubmit={handleSubmit}>
-      <ContainerUp>
-        <div>
-          <TextLabel>Name:</TextLabel>
-          <Input
-            type="text"
-            placeholder="Your Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <TextLabel>Last Name:</TextLabel>
-          <Input
-            type="text"
-            placeholder="Your Last Name"
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            required
-          />
-        </div>
-        <div>
-          <TextLabel>Number:</TextLabel>
-          <Input
-            type="tel"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
-            maxLength="15"
-            placeholder="+48 123 456 789"
-            value={number}
-            onChange={(e) => setNumber(e.target.value)}
-            
-          />
-        </div>
+    <>
+      <Container onSubmit={handleSubmit}>
+        <ContainerUp>
+          <div>
+            <TextLabel>Name:</TextLabel>
+            <Input
+              type="text"
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <TextLabel>Last Name:</TextLabel>
+            <Input
+              type="text"
+              placeholder="Your Last Name"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <TextLabel>Number:</TextLabel>
+            <Input
+              type="tel"
+              pattern="[0-9]{3} [0-9]{3} [0-9]{3}"
+              maxLength="15"
+              placeholder="+48 123 456 789"
+              value={number}
+              onChange={(e) => setNumber(e.target.value)}
+            />
+          </div>
 
-        <div>
-          <TextLabel>E-mail:</TextLabel>
-          <Input
-            type="email"
-            placeholder="Your Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-          />
-        </div>
+          <div>
+            <TextLabel>E-mail:</TextLabel>
+            <Input
+              type="email"
+              placeholder="Your Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-        <div>
-          {" "}
-          <TextLabel>Company or Private?</TextLabel>{" "}
           <div>
             {" "}
-            <Input
-              type="radio"
-              id="company"
-              name="userType"
-              value="Company"
-              checked={company === "Company"}
-              onChange={(e) => setCompany(e.target.value)}
-            />{" "}
-            <label htmlFor="company">Company</label>{" "}
-          </div>{" "}
+            <TextLabel>Company or Private?</TextLabel>{" "}
+            <div>
+              {" "}
+              <Input
+                type="radio"
+                id="company"
+                name="userType"
+                value="Company"
+                checked={company === "Company"}
+                onChange={(e) => setCompany(e.target.value)}
+              />{" "}
+              <label htmlFor="company">Company</label>{" "}
+            </div>{" "}
+            <div>
+              {" "}
+              <Input
+                type="radio"
+                id="private"
+                name="userType"
+                value="Private"
+                checked={company === "Private"}
+                onChange={(e) => setCompany(e.target.value)}
+              />{" "}
+              <label htmlFor="private">Private</label>{" "}
+            </div>{" "}
+          </div>
           <div>
-            {" "}
+            <TextLabel>Company Name:</TextLabel>
             <Input
-              type="radio"
-              id="private"
-              name="userType"
-              value="Private"
-              checked={company === "Private"}
-              onChange={(e) => setCompany(e.target.value)}
-            />{" "}
-            <label htmlFor="private">Private</label>{" "}
-          </div>{" "}
-        </div>
+              type="text"
+              placeholder="Company Name"
+              value={companyName}
+              onChange={(e) => setCompanyName(e.target.value)}
+            />
+          </div>
+          <div>
+            <TextLabel>End Data:</TextLabel>
+            <Input
+              type="date"
+              value={dueDate}
+              onChange={(e) => setDueDate(e.target.value)}
+            />
+          </div>
+        </ContainerUp>
         <div>
-          <TextLabel>Company Name:</TextLabel>
-          <Input
-            type="text"
-            placeholder="Company Name"
-            value={companyName}
-            onChange={(e) => setCompanyName(e.target.value)}
+          <TextLabel>Message:</TextLabel>
+          <Message
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            placeholder="Write Message"
           />
         </div>
-        <div>
-          <TextLabel>End Data:</TextLabel>
-          <Input
-            type="date"
-            value={dueDate}
-            onChange={(e) => setDueDate(e.target.value)}
-          />
-        </div>
-      </ContainerUp>
-      <div>
-        <TextLabel>Message:</TextLabel>
-        <Message
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="Write Message"
+        <Button type="submit">Send Email</Button>
+      </Container>
+
+      {sending && (
+        <SendingEmail message="Wysyłanie..." onCancel={handleCancel} />
+      )}
+
+      {sent && (
+        <SendingEmail
+          message="Wiadomośc wysłana prawidłowo."
+          onClose={closeSentPopup}
         />
-      </div>
-      <Button type="submits">Send Email</Button>
-    </Container>
+      )}
+    </>
   );
 };
 
