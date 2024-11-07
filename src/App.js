@@ -3,6 +3,7 @@ import Homepage from "./common/Section/Homepage";
 import { HashRouter, Switch, Route } from "react-router-dom";
 import AuthorPage from "./common/Section/AuthorPage";
 import Service from "./common/Section/ServicePage";
+import AdminPage from "./common/Section/AdminPage";
 
 export default () => (
   <HashRouter>
@@ -13,6 +14,9 @@ export default () => (
         </Route>
         <Route path="/Service">
           <Service />
+        </Route>
+        <Route path="/Admin">
+          <AdminPage />
         </Route>
         <Route path="/">
           <Homepage />
