@@ -97,7 +97,7 @@ const Sendmail = () => {
       };
 
   const handleCancel = () => {
-    setCancelled(true);
+    setCancelled(false);
     clearTimeout(timeoutRef.current);
     setSending(false);
   };
