@@ -57,12 +57,6 @@ const Sendmail = () => {
           timeoutRef.current = setTimeout(resolve, 3000);
         })
 
-        if (cancelled) {
-          console.log("Anulowano wysyłanie wiadomości");
-          setSending(false);
-          return;
-        }
-        
           // Save data to Firestore 
           await addDoc(collection(db, "mails"), templateParams); 
           
@@ -97,6 +91,7 @@ const Sendmail = () => {
       };
 
   const handleCancel = () => {
+    console.log("Anulowano wysyłanie wiadomości");
     setCancelled(false);
     clearTimeout(timeoutRef.current);
     setSending(false);
@@ -134,10 +129,10 @@ const Sendmail = () => {
             <TextLabel>Number:</TextLabel>
             <Input
               type="tel"
-              pattern="[0-9]{3} [0-9]{3} [0-9]{3}"
+              pattern="[0-9]{9}"
               maxLength="15"
-              placeholder="123 456 789"
-              title="correct format: 123 456 789"
+              placeholder="123456789"
+              title="correct format: 123456789"
               value={number}
               onChange={(e) => setNumber(e.target.value)}
             />
