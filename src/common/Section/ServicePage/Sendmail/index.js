@@ -24,7 +24,6 @@ const Sendmail = () => {
   const [dueDate, setDueDate] = useState("");
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
-  const [cancelled, setCancelled] = useState(false);
 
   const timeoutRef = useRef(null);
 
@@ -32,7 +31,6 @@ const Sendmail = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
-    setCancelled(false);
 
     const service_id = "service_1va29ae";
     const template_id_admin = "template_fn3p838";
@@ -92,7 +90,6 @@ const Sendmail = () => {
 
   const handleCancel = () => {
     console.log("Anulowano wysyłanie wiadomości");
-    setCancelled(false);
     clearTimeout(timeoutRef.current);
     setSending(false);
   };
