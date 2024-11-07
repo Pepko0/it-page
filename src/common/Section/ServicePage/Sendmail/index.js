@@ -1,7 +1,6 @@
-
 import emailjs from "@emailjs/browser";
 import SendingEmail from "../../../../features/SendingEmail";
-import { useState, useRef  } from "react";
+import { useState, useRef } from "react";
 import { db } from "../firebase-config";
 import { collection, addDoc } from "firebase/firestore";
 import {
@@ -27,7 +26,6 @@ const Sendmail = () => {
 
   const timeoutRef = useRef(null);
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
@@ -49,44 +47,53 @@ const Sendmail = () => {
       from_dueDate: dueDate,
     };
 
+    try {
+      await new Promise((resolve) => {
+        timeoutRef.current = setTimeout(resolve, 3000);
+      });
 
-      try { 
-        await new Promise((resolve) => {
-          timeoutRef.current = setTimeout(resolve, 3000);
-        })
+      // Save data to Firestore
+      await addDoc(collection(db, "mails"), templateParams);
 
-          // Save data to Firestore 
-          await addDoc(collection(db, "mails"), templateParams); 
-          
-          // Send email to user 
-          try{
-            await emailjs.send(service_id, template_id_user, templateParams, user_id)
-            console.log("Email sent to user!");
-          } catch (error) {
-            console.log("Error sending email to user...", error);
-          }
+      // Send email to user
+      try {
+        await emailjs.send(
+          service_id,
+          template_id_user,
+          templateParams,
+          user_id
+        );
+        console.log("Email sent to user!");
+      } catch (error) {
+        console.log("Error sending email to user...", error);
+      }
 
-          try {
-            await emailjs.send(service_id, template_id_admin, templateParams, user_id)
-            console.log("Email Sent to admin")
-          } catch (error) {
-            console.log("Error sending email to admin", error);
-          }
-          setName(""); 
-          setEmail(""); 
-          setMessage(""); 
-          setLastName(""); 
-          setNumber(""); 
-          setCompany(""); 
-          setCompanyName("");
-          setDueDate("");
-          setSending(false); 
-          setSent(true); 
-        } catch (error) { 
-          console.error("Error sending email and saving to Firestore:", error); 
-          setSending(false); 
-        } 
-      };
+      try {
+        await emailjs.send(
+          service_id,
+          template_id_admin,
+          templateParams,
+          user_id
+        );
+        console.log("Email Sent to admin");
+      } catch (error) {
+        console.log("Error sending email to admin", error);
+      }
+      setName("");
+      setEmail("");
+      setMessage("");
+      setLastName("");
+      setNumber("");
+      setCompany("");
+      setCompanyName("");
+      setDueDate("");
+      setSending(false);
+      setSent(true);
+    } catch (error) {
+      console.error("Error sending email and saving to Firestore:", error);
+      setSending(false);
+    }
+  };
 
   const handleCancel = () => {
     console.log("Anulowano wysyłanie wiadomości");
@@ -203,9 +210,7 @@ const Sendmail = () => {
         <Button type="submit">Send Email</Button>
       </Container>
 
-      {sending && (
-        <SendingEmail message="Sending..." onCancel={handleCancel} />
-      )}
+      {sending && <SendingEmail message="Sending..." onCancel={handleCancel} />}
 
       {sent && (
         <SendingEmail
