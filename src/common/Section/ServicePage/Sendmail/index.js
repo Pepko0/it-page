@@ -55,6 +55,7 @@ const Sendmail = () => {
       // Save data to Firestore
       await addDoc(collection(db, "mails"), templateParams);
 
+      
       // Send email to user
       try {
         await emailjs.send(

@@ -1,7 +1,8 @@
 import Navigation from "../Navigation";
+import TaskList from "./TaskList";
 import { db } from "../ServicePage/firebase-config";
-import { collection, getDocs } from "firebase/firestore";
-import { Container, ImportantText, Task, Title, Text, Items, BlockItem } from "./styled";
+import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
+import { Container } from "./styled";
 import { useEffect, useState } from "react";
 
 const AdminPage = () => {
@@ -20,44 +21,19 @@ const AdminPage = () => {
     fetchData();
   }, []);
 
+  const handleSave = async (updatedData) => {
+    const docRef = doc(db, "mails", updatedData.id);
+    await updateDoc(docRef, updatedData);
+    setData((prevData) =>
+      prevData.map((item) => (item.id === updatedData.id ? updatedData : item))
+    );
+  };
+
   return (
     <>
       <Navigation />
       <Container>
-        <ul>
-          {data.map((item, index) => (
-            <Task key={index}>
-              <Title>
-                {item.from_name} {item.from_lastname}
-              </Title>
-              <Items>
-                <BlockItem>
-                  <ImportantText>Phone Number: </ImportantText>
-                  <Text>{item.from_number}</Text>
-                </BlockItem>
-                <BlockItem>
-                  <ImportantText>E-mail: </ImportantText>
-                  <Text> {item.from_email}</Text>
-                </BlockItem>
-
-                <BlockItem>
-                  <ImportantText>Private or Company: </ImportantText>
-                  <Text>{item.from_company}</Text>
-                </BlockItem>
-                <BlockItem>
-                  <ImportantText>Company Name: </ImportantText>
-                  <Text>{item.from_companyName}</Text>
-                </BlockItem>
-                <BlockItem>
-                  <ImportantText>End Data: </ImportantText>
-                  <Text>{item.from_dueDate}</Text>
-                </BlockItem>
-              </Items>
-              <ImportantText>Message: </ImportantText>
-              <Text>{item.from_message}</Text>
-            </Task>
-          ))}
-        </ul>
+        <TaskList data={data} onSave={handleSave} />
       </Container>
     </>
   );
