@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { Task, Title, Text, ImportantText, Items, BlockItem } from "./styled";
 
-const TaskItem = ({ item, onSave }) => {
+const TaskItem = ({ item, onSave, onDelete }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [editData, setEditData] = useState({ ...item });
 
@@ -15,6 +15,10 @@ const TaskItem = ({ item, onSave }) => {
     onSave(editData);
     setIsEditing(false);
   };
+
+  const handleDelete = () => {
+    onDelete(item.id);
+  }
 
   return (
     <Task>
@@ -120,7 +124,7 @@ const TaskItem = ({ item, onSave }) => {
           <ImportantText>Message: </ImportantText>
           <Text>{item.message}</Text>
           <button onClick={() => setIsEditing(true)}>Edit</button>
-        </>
+          <button onClick={handleDelete}>Delete</button>        </>
       )}
     </Task>
   );

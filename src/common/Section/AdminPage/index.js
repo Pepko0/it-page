@@ -6,7 +6,7 @@ import ErrorGH from "../../../features/ErrorGH";
 import useTaskData from "../../../features/useTaskData";
 
 const AdminPage = () => {
-  const { taskData, updateTask } = useTaskData();
+  const { taskData, updateTask, deleteTask } = useTaskData();
 
   if (taskData.status === "pending") {
     return <Loading />;
@@ -22,7 +22,7 @@ const AdminPage = () => {
     <>
       <Navigation />
       <Container>
-        <TaskList data={taskData.data} onSave={updateTask} />
+        <TaskList data={taskData.data} onSave={updateTask} onDelete={deleteTask} />
       </Container>
     </>
   );

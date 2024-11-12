@@ -1,9 +1,9 @@
 import TaskItem from "../TaskItem";
 
-const TaskList = ({ data, onSave }) => (
+const TaskList = ({ data, onSave, onDelete }) => (
   <ul>
     {data.map((item, index) => (
-      <TaskItem key={index} item={item} onSave={onSave} />
+      <TaskItem key={index} item={item} onSave={onSave} onDelete={onDelete} />
     ))}
   </ul>
 );
