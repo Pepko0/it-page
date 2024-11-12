@@ -1,6 +1,15 @@
 // Task.js
 import React, { useState } from "react";
-import { Task, Title, Text, ImportantText, Items, BlockItem } from "./styled";
+import {
+  Task,
+  Title,
+  Text,
+  ImportantText,
+  Items,
+  BlockItem,
+  Header,
+} from "./styled";
+import { Input } from "../../ServicePage/Sendmail/styled";
 
 const TaskItem = ({ item, onSave, onDelete }) => {
   const [isEditing, setIsEditing] = useState(false);
@@ -17,21 +26,24 @@ const TaskItem = ({ item, onSave, onDelete }) => {
   };
 
   const handleDelete = () => {
-    onDelete(item.id);
-  }
+    const confirmDelete = window.confirm("Are yoy suer?");
+    if (confirmDelete) {
+      onDelete(item.id);
+    }
+  };
 
   return (
     <Task>
       {isEditing ? (
         <>
           <Title>
-            <input
+            <Input
               type="text"
               name="from_name"
               value={editData.from_name}
               onChange={handleEditChange}
             />
-            <input
+            <Input
               type="text"
               name="from_lastname"
               value={editData.from_lastname}
@@ -41,7 +53,7 @@ const TaskItem = ({ item, onSave, onDelete }) => {
           <Items>
             <BlockItem>
               <ImportantText>Phone Number: </ImportantText>
-              <input
+              <Input
                 type="text"
                 name="from_number"
                 value={editData.from_number}
@@ -50,7 +62,7 @@ const TaskItem = ({ item, onSave, onDelete }) => {
             </BlockItem>
             <BlockItem>
               <ImportantText>E-mail: </ImportantText>
-              <input
+              <Input
                 type="text"
                 name="from_email"
                 value={editData.from_email}
@@ -59,7 +71,7 @@ const TaskItem = ({ item, onSave, onDelete }) => {
             </BlockItem>
             <BlockItem>
               <ImportantText>Private or Company: </ImportantText>
-              <input
+              <Input
                 type="text"
                 name="from_company"
                 value={editData.from_company}
@@ -68,7 +80,7 @@ const TaskItem = ({ item, onSave, onDelete }) => {
             </BlockItem>
             <BlockItem>
               <ImportantText>Company Name: </ImportantText>
-              <input
+              <Input
                 type="text"
                 name="from_companyName"
                 value={editData.from_companyName}
@@ -77,7 +89,7 @@ const TaskItem = ({ item, onSave, onDelete }) => {
             </BlockItem>
             <BlockItem>
               <ImportantText>End Data: </ImportantText>
-              <input
+              <Input
                 type="date"
                 name="from_dueDate"
                 value={editData.from_dueDate}
@@ -86,7 +98,7 @@ const TaskItem = ({ item, onSave, onDelete }) => {
             </BlockItem>
           </Items>
           <ImportantText>Message: </ImportantText>
-          <input
+          <Input
             type="text"
             name="message"
             value={editData.message}
@@ -96,9 +108,15 @@ const TaskItem = ({ item, onSave, onDelete }) => {
         </>
       ) : (
         <>
-          <Title>
-            {item.from_name} {item.from_lastname}
-          </Title>
+          <Header>
+            <Title>
+              {item.from_name} {item.from_lastname}
+            </Title>
+            <div>
+              <button onClick={() => setIsEditing(true)}>Edit</button>
+              <button onClick={handleDelete}>Delete</button>
+            </div>
+          </Header>
           <Items>
             <BlockItem>
               <ImportantText>Phone Number: </ImportantText>
@@ -123,8 +141,7 @@ const TaskItem = ({ item, onSave, onDelete }) => {
           </Items>
           <ImportantText>Message: </ImportantText>
           <Text>{item.message}</Text>
-          <button onClick={() => setIsEditing(true)}>Edit</button>
-          <button onClick={handleDelete}>Delete</button>        </>
+        </>
       )}
     </Task>
   );

@@ -11,10 +11,8 @@ export const Task = styled.li`
 export const Title = styled.h2`
   color: ${({ theme }) => theme.color.mainblue};
   padding: 10px;
-  border-bottom: solid 1px;
-  margin: -3px -10px;
   font-size: 30px;
-  margin-bottom: 30px;
+  margin: 10px 0px;
 `;
 export const Text = styled.label`
   color: ${({ theme }) => theme.color.gray};
@@ -30,7 +28,7 @@ export const Items = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
 
-  @media(max-width: ${({theme}) => theme.media.tablet}){
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
     grid-template-columns: 1fr;
   }
 `;
@@ -42,5 +40,13 @@ export const BlockItem = styled.div`
 export const TextDown = styled.p`
   color: ${({ theme }) => theme.color.gray};
   font-size: 20px;
-  padding: 0 20px
+  padding: 0 20px;
+`;
+
+export const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1px;
+  margin: -3px -10px;
+  color: ${({ theme }) => theme.color.mainblue};
 `;
