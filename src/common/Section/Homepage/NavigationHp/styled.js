@@ -117,7 +117,7 @@ export const StyledLink = styled(Link)`
 
 
   &:hover {
-    background-color: ${({theme}) => theme.color.gray};
+    background-color: ${({theme}) => theme.color.cornflowerblue};
     color: ${({theme}) => theme.color.white}
   }
   

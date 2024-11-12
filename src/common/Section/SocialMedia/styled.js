@@ -5,14 +5,14 @@ export const LogoGH = styled.svg`
   fill: ${({ theme }) => theme.color.black};
   transition: fill 0.3s ease;
 
-  :hover {
+  &:hover {
     fill: ${({ theme }) => theme.color.tundora};
   }
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     width: 8vw;
 
-    :hover {
+    &:hover {
       fill: ${({ theme }) => theme.color.black};
     }
   }
@@ -24,16 +24,16 @@ export const LogoGH = styled.svg`
 
 export const LogoLk = styled.svg`
   width: 75px;
-  fill: ${({ theme }) => theme.color.linkedine};
+  fill: ${({ theme }) => theme.color.black};
   transition: fill 0.3s ease;
-  :hover {
+  &:hover {
     fill: ${({ theme }) => theme.color.cornflowerblue};
   }
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
     width: 8vw;
 
-    :hover {
+    &:hover {
       fill: ${({ theme }) => theme.color.linkedine};
     }
   }
