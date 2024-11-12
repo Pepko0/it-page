@@ -4,36 +4,28 @@ import { db } from "../ServicePage/firebase-config";
 import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { Container } from "./styled";
 import { useEffect, useState } from "react";
+import Loading from "../../../features/Loading";
+import ErrorGH from "../../../features/ErrorGH";
+import useTaskData from "../../../features/useTaskData";
 
 const AdminPage = () => {
-  const [data, setData] = useState([]);
+  const {taskData, updateTask} = useTaskData();
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const querySnapshot = await getDocs(collection(db, "mails"));
-      const dataArray = querySnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setData(dataArray);
-    };
-
-    fetchData();
-  }, []);
-
-  const handleSave = async (updatedData) => {
-    const docRef = doc(db, "mails", updatedData.id);
-    await updateDoc(docRef, updatedData);
-    setData((prevData) =>
-      prevData.map((item) => (item.id === updatedData.id ? updatedData : item))
-    );
-  };
+  if (taskData.status === "pending") {
+    return <Loading />
+  }
+  if(taskData.status === "error"){
+    return <ErrorGH />
+  }
+  if(taskData.data.length === 0){
+    return <p>Brak danych</p>
+  }
 
   return (
     <>
       <Navigation />
       <Container>
-        <TaskList data={data} onSave={handleSave} />
+        <TaskList data={taskData.data} onSave={updateTask} />
       </Container>
     </>
   );
