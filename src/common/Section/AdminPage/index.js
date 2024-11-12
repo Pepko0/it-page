@@ -1,24 +1,21 @@
 import Navigation from "../Navigation";
 import TaskList from "./TaskList";
-import { db } from "../ServicePage/firebase-config";
-import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { Container } from "./styled";
-import { useEffect, useState } from "react";
 import Loading from "../../../features/Loading";
 import ErrorGH from "../../../features/ErrorGH";
 import useTaskData from "../../../features/useTaskData";
 
 const AdminPage = () => {
-  const {taskData, updateTask} = useTaskData();
+  const { taskData, updateTask } = useTaskData();
 
   if (taskData.status === "pending") {
-    return <Loading />
+    return <Loading />;
   }
-  if(taskData.status === "error"){
-    return <ErrorGH />
+  if (taskData.status === "error") {
+    return <ErrorGH />;
   }
-  if(taskData.data.length === 0){
-    return <p>Brak danych</p>
+  if (taskData.data.length === 0) {
+    return <p>Brak danych</p>;
   }
 
   return (
