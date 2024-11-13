@@ -36,3 +36,26 @@ export const Header = styled.div`
   margin: -3px -10px;
   color: ${({ theme }) => theme.color.mainblue};
 `;
+
+export const LogoEdit = styled.svg`
+    width: 50px;
+    fill: ${({theme}) => theme.color.black};
+    transition: fill 0.2s;
+
+    &:hover {
+        fill: ${({theme}) => theme.color.cornflowerblue};
+        cursor: pointer;
+    }
+`
+
+
+export const LogoDelete = styled.svg`
+    width: 50px;
+    fill: ${({theme}) => theme.color.black};
+    transition: fill 0.2s;
+
+    &:hover {
+        fill: ${({theme}) => theme.color.red};
+        cursor: pointer;
+    }
+`

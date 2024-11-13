@@ -21,7 +21,8 @@ export const theme = {
         portage: "#7DA3E3",
         linkedine: "#0a66c2",
         cornflowerblue: "#0883ff",
-        tundora: "#474747"
+        tundora: "#474747",
+        red: "red"
 
     },
 
