@@ -1,11 +1,12 @@
 import TaskItem from "../TaskItem";
+import { Element } from "./styled";
 
 const TaskList = ({ data, onSave, onDelete }) => (
-  <ul>
+  <Element>
     {data.map((item, index) => (
       <TaskItem key={index} item={item} onSave={onSave} onDelete={onDelete} />
     ))}
-  </ul>
+  </Element>
 );
 
 export default TaskList;
