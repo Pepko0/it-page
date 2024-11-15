@@ -36,4 +36,5 @@ export const Header = styled.div`
 export const BlockLogo = styled.div`
   display: flex;
   align-items: center;
+  gap: 10px;
 `

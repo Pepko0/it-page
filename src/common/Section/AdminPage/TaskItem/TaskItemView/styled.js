@@ -7,7 +7,7 @@ export const Title = styled.h2`
   margin: 10px 0px;
 
   @media(max-width: ${({theme}) => theme.media.phone}){
-    font-size: 4vw;
+    font-size: 6vw;
   }
 `;
 export const Text = styled.label`
@@ -15,7 +15,7 @@ export const Text = styled.label`
   font-size: 20px;
   
   @media(max-width: ${({theme}) => theme.media.phone}){
-    font-size: 3vw;
+    font-size: 5vw;
   }
 `;
 
@@ -26,7 +26,7 @@ export const ImportantText = styled.label`
 
     
   @media(max-width: ${({theme}) => theme.media.phone}){
-    font-size: 3vw;
+    font-size: 5vw;
   }
 `;
 export const Items = styled.div`
@@ -66,7 +66,7 @@ export const LogoEdit = styled.svg`
     }
 
     @media(max-width: ${({theme}) => theme.media.phone}){
-      width: 7vw;
+      width: 10vw;
     }
 `
 
@@ -87,8 +87,7 @@ export const LogoDelete = styled.svg`
       }
     }
 
-
     @media(max-width: ${({theme}) => theme.media.phone}){
-      width: 7vw;
+      width: 10vw;
     }
 `
