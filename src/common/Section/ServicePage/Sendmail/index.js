@@ -2,7 +2,8 @@ import emailjs from "@emailjs/browser";
 import SendingEmail from "../../../../features/SendingEmail";
 import { useState, useRef } from "react";
 import { db } from "../firebase-config";
-import { collection, addDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc, collection, addDoc } from "firebase/firestore"; // Importowanie funkcji Firestore
+
 import {
   Container,
   ContainerUp,
@@ -11,11 +12,6 @@ import {
   Message,
   Button,
 } from "./styled";
-
-const getOrderNumberFromLocalStorage = () => {
-  const storedOrderNumber = localStorage.getItem("orderNumber");
-  return storedOrderNumber ? parseInt(storedOrderNumber, 10) : 1;
-};
 
 const Sendmail = () => {
   const [name, setName] = useState("");
@@ -28,45 +24,63 @@ const Sendmail = () => {
   const [dueDate, setDueDate] = useState("");
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
-  const [orderNumber, setOrderNumber] = useState(
-    getOrderNumberFromLocalStorage
-  );
+  const [orderNumber, setOrderNumber] = useState(null);
+
 
   const timeoutRef = useRef(null);
 
-
+  const getOrderNumberFromFirestore = async () => {
+    const docRef = doc(db, "config", "orderCounter");
+    const docSnap = await getDoc(docRef);
+  
+    if (docSnap.exists()) {
+      return docSnap.data().currentOrderNumber;
+    } else {
+      throw new Error("No such document!");
+    }
+  };
+  
+  const incrementOrderNumberInFirestore = async (currentOrderNumber) => {
+    const docRef = doc(db, "config", "orderCounter");
+    await updateDoc(docRef, {
+      currentOrderNumber: currentOrderNumber + 1 
+    });
+  };
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
 
-    const service_id = "service_1va29aes";
-    const template_id_admin = "template_fn3p838s";
-    const template_id_user = "template_wwt6kj9s";
-    const user_id = "bouZ6eRw05NW91fRJs";
-
-    const templateParams = {
-      from_name: name,
-      from_email: email,
-      my_companyName: "IT-LIONS",
-      message: message,
-      from_lastname: lastName,
-      from_number: number,
-      from_company: company,
-      from_companyName: companyName,
-      from_dueDate: dueDate,
-      from_orderNumber: orderNumber,
-    };
-
     try {
+      const currentOrderNumber = await getOrderNumberFromFirestore();
+      const newOrderNumber = currentOrderNumber;
+
+      const service_id = "service_1va29aes";
+      const template_id_admin = "template_fn3p838s";
+      const template_id_user = "template_wwt6kj9s";
+      const user_id = "bouZ6eRw05NW91fRJs";
+
+      const templateParams = {
+        from_name: name,
+        from_email: email,
+        my_companyName: "IT-LIONS",
+        message: message,
+        from_lastname: lastName,
+        from_number: number,
+        from_company: company,
+        from_companyName: companyName,
+        from_dueDate: dueDate,
+        from_orderNumber: newOrderNumber,
+      };
+
       await new Promise((resolve) => {
-        timeoutRef.current = setTimeout(resolve, 3000);
+        timeoutRef.current = setTimeout(resolve, 2000);
       });
 
       // Save data to Firestore
       await addDoc(collection(db, "mails"), templateParams);
-
-      // Send email to user
+    
       try {
         await emailjs.send(
           service_id,
@@ -90,6 +104,7 @@ const Sendmail = () => {
       } catch (error) {
         console.log("Error sending email to admin", error);
       }
+    
       setName("");
       setEmail("");
       setMessage("");
@@ -100,13 +115,12 @@ const Sendmail = () => {
       setDueDate("");
       setSending(false);
       setSent(true);
-      setOrderNumber((prevOrderNumber) => {
-        const newOrderNumber = prevOrderNumber + 1;
-        localStorage.setItem("orderNumber", newOrderNumber);
-        return newOrderNumber;
-      });
-    } catch (error) {
-      console.error("Error sending email and saving to Firestore:", error);
+      setOrderNumber(newOrderNumber);
+      
+      await incrementOrderNumberInFirestore(currentOrderNumber);
+      
+    }catch(error) {
+      console.log("Error sending Email: ", error);
       setSending(false);
     }
   };
@@ -226,8 +240,8 @@ const Sendmail = () => {
       {sending && <SendingEmail message="Sending..." onCancel={handleCancel} />}
 
       {sent && (
-        <SendingEmail
-          message={`Message sent correctly. Order number: ${orderNumber - 1}`}
+        <SendingEmail 
+        message={`Message sent correctly. Order number: ${orderNumber}`}
           onClose={closeSentPopup}
         />
       )}
