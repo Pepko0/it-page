@@ -23,6 +23,7 @@ const Sendmail = () => {
   const [dueDate, setDueDate] = useState("");
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
+  const [orderNumber, setOrderNumber] = useState(1);
 
   const timeoutRef = useRef(null);
 
@@ -45,6 +46,7 @@ const Sendmail = () => {
       from_company: company,
       from_companyName: companyName,
       from_dueDate: dueDate,
+      from_orderNumber: orderNumber
     };
 
     try {
@@ -90,6 +92,7 @@ const Sendmail = () => {
       setDueDate("");
       setSending(false);
       setSent(true);
+      setOrderNumber((prevOrderNumber) => prevOrderNumber + 1)
     } catch (error) {
       console.error("Error sending email and saving to Firestore:", error);
       setSending(false);
@@ -215,7 +218,7 @@ const Sendmail = () => {
 
       {sent && (
         <SendingEmail
-          message="Message sent correctly"
+          message={`Message sent correctly. Order number: ${orderNumber -1}`}
           onClose={closeSentPopup}
         />
       )}
