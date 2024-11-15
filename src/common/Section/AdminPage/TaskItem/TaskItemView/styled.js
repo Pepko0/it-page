@@ -13,12 +13,21 @@ export const Title = styled.h2`
 export const Text = styled.label`
   color: ${({ theme }) => theme.color.gray};
   font-size: 20px;
+  
+  @media(max-width: ${({theme}) => theme.media.phone}){
+    font-size: 3vw;
+  }
 `;
 
 export const ImportantText = styled.label`
   font-weight: bold;
   color: ${({ theme }) => theme.color.mainblue};
   font-size: 20px;
+
+    
+  @media(max-width: ${({theme}) => theme.media.phone}){
+    font-size: 3vw;
+  }
 `;
 export const Items = styled.div`
   display: grid;
