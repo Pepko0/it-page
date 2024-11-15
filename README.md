@@ -1,72 +1,46 @@
-# Getting Started with Create React App
+# React - IT-LIONS 🚀
 
-# Link: https://pepko0.github.io/it-page/
+### [Visit the Site](https://pepko0.github.io/it-page/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hej! Miło cię widzieć na moim GitHubie! 👋
 
-## Available Scripts
+Stworzyłem stronę internetową o sobie, wzbogaconą o funkcje, które ułatwiają kontakt między mną, jako właścicielem strony, a osobami przeglądającymi. 🌐
 
-In the project directory, you can run:
+### Podstrony
 
-### `npm start`
+#### 🏠 Homepage
+Strona główna, gdzie znajdziesz krótki opis naszych usług. [Odwiedź stronę Homepage](https://pepko0.github.io/it-page/#/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### 👨‍💼 Strona o Autorze
+Dowiedz się więcej o moim doświadczeniu na [stronie o Autorze](https://pepko0.github.io/it-page/#/Author).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Strona ta jest zorganizowana w kilka podfolderów:
+- **AuthorPage**
+  - Header
+  - Skills
+  - Footer
 
-### `npm test`
+Dzięki temu łatwiej zarządzać tą częścią witryny.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 🛠️ Strona Service
+Na [stronie Service](https://pepko0.github.io/it-page/#/Service) możesz wypełnić formularz, aby wysłać zapytanie lub zlecenie do właściciela strony. Aby wysłać wiadomość, użytkownik musi podać: Imię, Nazwisko i Email. 📝
 
-### `npm run build`
+Po wypełnieniu danych i kliknięciu "Send Email" pojawia się komunikat, że wiadomość jest wysyłana, z możliwością jej anulowania. Po wysłaniu wiadomości wyświetla się komunikat potwierdzający i numer zamówienia. 📧
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Wiadomości są automatycznie wysyłane na email właściciela, email użytkownika oraz zapisywane w bazie danych Firebase dzięki integracji z Firebase i email.js. 📤
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Numerowanie Zamówień
+W Firebase został utworzony specjalny katalog do numerowania zamówień, co pozwala na szybkie pobieranie ostatniego numeru zamówienia.
 
-### `npm run eject`
+#### 🛡️ Strona Admin
+Na [stronie Admin](https://pepko0.github.io/it-page/#/Admin) właściciel strony może zarządzać zamówieniami: wyświetlać, edytować i usuwać zamówienia. ⚙️
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Zewnętrzne Biblioteki
+- emailjs
+- firebase
+- styled-components
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Dzięki za odwiedziny i do zobaczenia na stronie! 😃🚀
