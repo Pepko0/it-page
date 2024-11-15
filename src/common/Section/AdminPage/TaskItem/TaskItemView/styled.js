@@ -5,6 +5,10 @@ export const Title = styled.h2`
   padding: 10px;
   font-size: 30px;
   margin: 10px 0px;
+
+  @media(max-width: ${({theme}) => theme.media.phone}){
+    font-size: 4vw;
+  }
 `;
 export const Text = styled.label`
   color: ${({ theme }) => theme.color.gray};
@@ -45,6 +49,16 @@ export const LogoEdit = styled.svg`
         fill: ${({theme}) => theme.color.cornflowerblue};
         cursor: pointer;
     }
+
+    @media(max-width: ${({theme}) => theme.media.tablet}){
+      &:hover{
+        fill: ${({theme})=> theme.color.black};
+      }
+    }
+
+    @media(max-width: ${({theme}) => theme.media.phone}){
+      width: 7vw;
+    }
 `
 
 
@@ -56,5 +70,16 @@ export const LogoDelete = styled.svg`
     &:hover {
         fill: ${({theme}) => theme.color.red};
         cursor: pointer;
+    }
+
+    @media(max-width: ${({theme}) => theme.media.tablet}){
+      &:hover{
+        fill: ${({theme})=> theme.color.black};
+      }
+    }
+
+
+    @media(max-width: ${({theme}) => theme.media.phone}){
+      width: 7vw;
     }
 `
