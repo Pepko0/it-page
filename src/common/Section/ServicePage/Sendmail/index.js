@@ -12,6 +12,11 @@ import {
   Button,
 } from "./styled";
 
+const getOrderNumberFromLocalStorage = () => {
+  const storedOrderNumber = localStorage.getItem("orderNumber");
+  return storedOrderNumber ? parseInt(storedOrderNumber, 10) : 1;
+};
+
 const Sendmail = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -23,18 +28,22 @@ const Sendmail = () => {
   const [dueDate, setDueDate] = useState("");
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
-  const [orderNumber, setOrderNumber] = useState(1);
+  const [orderNumber, setOrderNumber] = useState(
+    getOrderNumberFromLocalStorage
+  );
 
   const timeoutRef = useRef(null);
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setSending(true);
 
-    const service_id = "service_1va29ae";
-    const template_id_admin = "template_fn3p838";
-    const template_id_user = "template_wwt6kj9";
-    const user_id = "bouZ6eRw05NW91fRJ";
+    const service_id = "service_1va29aes";
+    const template_id_admin = "template_fn3p838s";
+    const template_id_user = "template_wwt6kj9s";
+    const user_id = "bouZ6eRw05NW91fRJs";
 
     const templateParams = {
       from_name: name,
@@ -46,7 +55,7 @@ const Sendmail = () => {
       from_company: company,
       from_companyName: companyName,
       from_dueDate: dueDate,
-      from_orderNumber: orderNumber
+      from_orderNumber: orderNumber,
     };
 
     try {
@@ -57,7 +66,6 @@ const Sendmail = () => {
       // Save data to Firestore
       await addDoc(collection(db, "mails"), templateParams);
 
-      
       // Send email to user
       try {
         await emailjs.send(
@@ -92,7 +100,11 @@ const Sendmail = () => {
       setDueDate("");
       setSending(false);
       setSent(true);
-      setOrderNumber((prevOrderNumber) => prevOrderNumber + 1)
+      setOrderNumber((prevOrderNumber) => {
+        const newOrderNumber = prevOrderNumber + 1;
+        localStorage.setItem("orderNumber", newOrderNumber);
+        return newOrderNumber;
+      });
     } catch (error) {
       console.error("Error sending email and saving to Firestore:", error);
       setSending(false);
@@ -158,10 +170,8 @@ const Sendmail = () => {
           </div>
 
           <div>
-  
             <TextLabel>Company or Private?</TextLabel>
             <div>
-             
               <Input
                 type="radio"
                 id="company"
@@ -173,7 +183,6 @@ const Sendmail = () => {
               <label htmlFor="company">Company</label>
             </div>
             <div>
-              
               <Input
                 type="radio"
                 id="private"
@@ -218,7 +227,7 @@ const Sendmail = () => {
 
       {sent && (
         <SendingEmail
-          message={`Message sent correctly. Order number: ${orderNumber -1}`}
+          message={`Message sent correctly. Order number: ${orderNumber - 1}`}
           onClose={closeSentPopup}
         />
       )}
