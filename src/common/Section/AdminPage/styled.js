@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: ${({theme}) => theme.width.container};
-    margin-top: 100px;
-
+    margin: 100px auto;
+    
     @media(max-width: ${({theme}) => theme.media.phone}) {
-        width: 95vw;
+        width: 90vw;
     }
 `

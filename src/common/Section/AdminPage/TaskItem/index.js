@@ -33,6 +33,7 @@ const TaskItem = ({ item, onSave, onDelete }) => {
               editData={editData}
               handleEditChange={handleEditChange}
               handleSave={handleSave}
+              setIsEditing={setIsEditing}
              />
       ) : (
 

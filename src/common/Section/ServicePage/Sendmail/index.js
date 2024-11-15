@@ -158,10 +158,10 @@ const Sendmail = () => {
           </div>
 
           <div>
-            {" "}
-            <TextLabel>Company or Private?</TextLabel>{" "}
+  
+            <TextLabel>Company or Private?</TextLabel>
             <div>
-              {" "}
+             
               <Input
                 type="radio"
                 id="company"
@@ -169,11 +169,11 @@ const Sendmail = () => {
                 value="Company"
                 checked={company === "Company"}
                 onChange={(e) => setCompany(e.target.value)}
-              />{" "}
-              <label htmlFor="company">Company</label>{" "}
-            </div>{" "}
+              />
+              <label htmlFor="company">Company</label>
+            </div>
             <div>
-              {" "}
+              
               <Input
                 type="radio"
                 id="private"
@@ -181,9 +181,9 @@ const Sendmail = () => {
                 value="Private"
                 checked={company === "Private"}
                 onChange={(e) => setCompany(e.target.value)}
-              />{" "}
-              <label htmlFor="private">Private</label>{" "}
-            </div>{" "}
+              />
+              <label htmlFor="private">Private</label>
+            </div>
           </div>
           <div>
             <TextLabel>Company Name:</TextLabel>

@@ -26,14 +26,13 @@ export const Items = styled.div`
 `;
 
 export const BlockItem = styled.div`
-  margin: 10px 0;
+  margin: 10px ;
 `;
 
 export const Header = styled.div`
   display: flex;
   justify-content: space-between;
   border-bottom: solid 1px;
-  margin: -3px -10px;
   color: ${({ theme }) => theme.color.mainblue};
 `;
 

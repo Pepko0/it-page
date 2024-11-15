@@ -8,15 +8,14 @@ import {
   LogoEdit,
   LogoDelete,
 } from "./styled";
+import { BlockLogo } from "../TaskitemEditing/styled";
 
 const TaskItemView = ({ item, handleDelete, setIsEditing }) => {
   return (
     <>
       <Header>
-        <Title>
-          {item.from_name} {item.from_lastname}
-        </Title>
-        <div>
+        <Title>Order Number: {item.from_orderNumber}</Title>
+        <BlockLogo>
           <LogoEdit
             onClick={() => setIsEditing(true)}
             viewBox="0 0 24 24"
@@ -31,9 +30,17 @@ const TaskItemView = ({ item, handleDelete, setIsEditing }) => {
           >
             <path d="M16 9v10H8V9h8Zm-1.5-6h-5l-1 1H5v2h14V4h-3.5l-1-1ZM18 7H6v12c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7Z"></path>
           </LogoDelete>
-        </div>
+        </BlockLogo>
       </Header>
       <Items>
+        <BlockItem>
+          <ImportantText>Name: </ImportantText>
+          <Text>{item.from_name}</Text>
+        </BlockItem>
+        <BlockItem>
+          <ImportantText>Last Name: </ImportantText>
+          <Text>{item.from_lastname}</Text>
+        </BlockItem>
         <BlockItem>
           <ImportantText>Phone Number: </ImportantText>
           <Text>{item.from_number}</Text>
@@ -55,8 +62,10 @@ const TaskItemView = ({ item, handleDelete, setIsEditing }) => {
           <Text>{item.from_dueDate}</Text>
         </BlockItem>
       </Items>
-      <ImportantText>Message: </ImportantText>
-      <Text>{item.message}</Text>
+      <BlockItem>
+        <ImportantText>Message: </ImportantText>
+        <Text>{item.message}</Text>
+      </BlockItem>
     </>
   );
 };
