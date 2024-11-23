@@ -56,11 +56,11 @@ const Sendmail = () => {
       const currentOrderNumber = await getOrderNumberFromFirestore();
       const newOrderNumber = currentOrderNumber;
 
-      const service_id = "service_1va29aes";
-      const template_id_admin = "template_fn3p838s";
-      const template_id_user = "template_wwt6kj9s";
-      const user_id = "bouZ6eRw05NW91fRJs";
-
+      const service_id = "service_1va29ae";
+      const template_id_admin = "template_fn3p838";
+      const template_id_user = "template_wwt6kj9";
+      const user_id = "bouZ6eRw05NW91fRJ";
+      
       const templateParams = {
         from_name: name,
         from_email: email,
