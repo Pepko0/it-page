@@ -11,7 +11,6 @@ export const Container = styled.nav`
   justify-content: center;
   gap: 20px;
   padding: 20px;
-  margin-bottom: 20px;
 `;
 
 export const StyledLink = styled(Link)`

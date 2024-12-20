@@ -9,13 +9,13 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 1.8vw;
+  font-size: 2em;
   margin: 20px;
   padding: 10px;
   border-bottom: solid 1px;
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    font-size: 2vw;
+    font-size: 2.5vw;
   }
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
@@ -45,7 +45,7 @@ export const List = styled.li`
     margin-right: 10px;
   }
 
-  font-size:1.3vw;
+  font-size:1.2em;
   margin-bottom: 15px;
 
 

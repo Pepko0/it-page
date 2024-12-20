@@ -5,8 +5,8 @@ export const Content = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     width:  ${({theme}) => theme.width.component};
     margin: auto;
-
-    @media(max-width:${({theme}) => theme.media.tablet}){
+    
+    @media(max-width: 1900px){
         grid-template-columns: 1fr 1fr;
     }
 

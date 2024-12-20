@@ -10,8 +10,12 @@ export const RepositoriesContent = styled.div`
 export const Title = styled.h2`
   font-family: ${({ theme }) => theme.font.inter};
   font-weight: 900;
-  font-size: 2vw;
+  font-size: 2em;
   margin-top: 5px;
+  
+  @media(max-width: ${({theme}) => theme.media.tablet}){
+    font-size: 3vw;
+  }
 
   @media(max-width: ${({theme}) => theme.media.phone}){
     font-size: 4vw;
@@ -25,19 +29,19 @@ export const Content = styled.p`
 export const Link = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.color.mainblue};
-  font-size: 1vw;
+  font-size: 1.2em;
 
   @media(max-width: ${({theme}) => theme.media.tablet}){
     font-size: 1.6vw;
   }
 
   @media(max-width: ${({theme}) => theme.media.phone}){
-    font-size: 3.5vw;
+    font-size: 3vw;
   }
 `;
 
 export const Text = styled.p`
-  font-size: 1vw;
+  font-size: 1.2em;
   display: inline;
 
   @media(max-width: ${({theme}) => theme.media.tablet}){
@@ -45,6 +49,6 @@ export const Text = styled.p`
   }
 
   @media(max-width: ${({theme}) => theme.media.phone}){
-    font-size: 3.5vw;;
+    font-size: 3vw;;
   }
 `;

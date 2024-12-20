@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
-    width:  ${({theme}) => theme.width.component};
-  margin: 20px auto 40px;
+  width:  ${({ theme }) => theme.width.component};
+  margin: 100px auto 40px;
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-gap: 2vw;
@@ -17,7 +17,7 @@ export const Logo = styled.svg`
   height: 18vw;
   margin: auto;
   border-radius: 100%;
-  fill:${({theme}) => theme.color.lightgray};
+  fill:${({ theme }) => theme.color.lightgray};
   background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
