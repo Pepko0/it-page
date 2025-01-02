@@ -4,7 +4,7 @@ export const Header = styled.header`
   width:  ${({ theme }) => theme.width.component};
   margin: 100px auto 40px;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: auto 3fr;
   grid-gap: 2vw;
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
