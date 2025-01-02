@@ -9,6 +9,7 @@ const Navigation = () => {
         {location.pathname !== "/" && <StyledLink to="/">Homepage</StyledLink>}
         {location.pathname !== "/Service" && <StyledLink to="/Service">Service</StyledLink>}
         {location.pathname !== "/Author" && <StyledLink to="/Author">Author</StyledLink>}
+        {location.pathname !== "/Admin" && <StyledLink to="/Admin">Admin</StyledLink>}
     </Container>
   );
 };
