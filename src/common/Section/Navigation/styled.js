@@ -17,6 +17,10 @@ export const StyledLink = styled(Link)`
   text-decoration: none;
   font-size: 30px;
   color: ${({ theme }) => theme.color.mainblue};
+  transition: color 0.3s ease;
+  &:hover {
+    color: ${({theme}) => theme.color.cornflowerblue};
+  }
 
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
