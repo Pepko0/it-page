@@ -13,36 +13,31 @@ export const Container = styled.div`
 `;
 
 export const Title = styled.h2`
-  font-size: 2vw;
+  font-size: 2em;
   padding: 10px;
 
   @media(max-width: ${({theme}) => theme.media.tablet}){
-    font-size: 3vw
+    font-size: 2.5vw;
   }
 
   @media(max-width: ${({theme}) => theme.media.phone}){
-    font-size: 4vw
+    font-size: 5vw;
   }
 `;
 
-export const IconGitHub = styled.svg`
-  width:12vw;
-  animation-duration: 2s;
-  animation-delay: 0.5s;
-  fill: grey;
-  animation-name: color;
-  animation-iteration-count: infinite;
-
-  @media (max-width: ${({ theme }) => theme.media.phone}) {
-    width: 35vw;
-  }
-
-  @keyframes color {
-    0% {
-      fill: #D6D6D6;
-    }
-    100% {
-      fill: black;
-    }
-  }
-`;
+export const Loader = styled.div`
+width: 50px;
+  padding: 8px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: ${({theme}) => theme.color.mainblue};
+  --_m: 
+    conic-gradient(#0000 10%,#000),
+    linear-gradient(#000 0 0) content-box;
+  -webkit-mask: var(--_m);
+          mask: var(--_m);
+  -webkit-mask-composite: source-out;
+          mask-composite: subtract;
+  animation: l3 1s infinite linear;
+  @keyframes l3 {to{transform: rotate(1turn)}}
+`
