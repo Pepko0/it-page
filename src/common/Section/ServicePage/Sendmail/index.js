@@ -11,6 +11,8 @@ import {
   Input,
   Message,
   Button,
+  CustomRB,
+  RadioInput,
 } from "./styled";
 
 const Sendmail = () => {
@@ -32,21 +34,21 @@ const Sendmail = () => {
   const getOrderNumberFromFirestore = async () => {
     const docRef = doc(db, "config", "orderCounter");
     const docSnap = await getDoc(docRef);
-  
+
     if (docSnap.exists()) {
       return docSnap.data().currentOrderNumber;
     } else {
       throw new Error("No such document!");
     }
   };
-  
+
   const incrementOrderNumberInFirestore = async (currentOrderNumber) => {
     const docRef = doc(db, "config", "orderCounter");
     await updateDoc(docRef, {
-      currentOrderNumber: currentOrderNumber + 1 
+      currentOrderNumber: currentOrderNumber + 1
     });
   };
-  
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,7 +62,7 @@ const Sendmail = () => {
       const template_id_admin = "template_fn3p838";
       const template_id_user = "template_wwt6kj9";
       const user_id = "bouZ6eRw05NW91fRJ";
-      
+
       const templateParams = {
         from_name: name,
         from_email: email,
@@ -80,7 +82,7 @@ const Sendmail = () => {
 
       // Save data to Firestore
       await addDoc(collection(db, "mails"), templateParams);
-    
+
       try {
         await emailjs.send(
           service_id,
@@ -104,7 +106,7 @@ const Sendmail = () => {
       } catch (error) {
         console.log("Error sending email to admin", error);
       }
-    
+
       setName("");
       setEmail("");
       setMessage("");
@@ -116,10 +118,10 @@ const Sendmail = () => {
       setSending(false);
       setSent(true);
       setOrderNumber(newOrderNumber);
-      
+
       await incrementOrderNumberInFirestore(currentOrderNumber);
-      
-    }catch(error) {
+
+    } catch (error) {
       console.log("Error sending Email: ", error);
       setSending(false);
     }
@@ -182,11 +184,10 @@ const Sendmail = () => {
               required
             />
           </div>
-
           <div>
             <TextLabel>Company or Private?</TextLabel>
             <div>
-              <Input
+              <RadioInput
                 type="radio"
                 id="company"
                 name="userType"
@@ -194,10 +195,10 @@ const Sendmail = () => {
                 checked={company === "Company"}
                 onChange={(e) => setCompany(e.target.value)}
               />
-              <label htmlFor="company">Company</label>
+              <CustomRB htmlFor="company">Company</CustomRB>
             </div>
             <div>
-              <Input
+              <RadioInput
                 type="radio"
                 id="private"
                 name="userType"
@@ -205,7 +206,7 @@ const Sendmail = () => {
                 checked={company === "Private"}
                 onChange={(e) => setCompany(e.target.value)}
               />
-              <label htmlFor="private">Private</label>
+              <CustomRB htmlFor="private">Private</CustomRB>
             </div>
           </div>
           <div>
@@ -235,16 +236,19 @@ const Sendmail = () => {
           />
         </div>
         <Button type="submit">Send Email</Button>
-      </Container>
+      </Container >
 
-      {sending && <SendingEmail message="Sending..." onCancel={handleCancel} />}
+      {sending && <SendingEmail message="Sending..." onCancel={handleCancel} />
+      }
 
-      {sent && (
-        <SendingEmail 
-        message={`Message sent correctly. Order number: ${orderNumber}`}
-          onClose={closeSentPopup}
-        />
-      )}
+      {
+        sent && (
+          <SendingEmail
+            message={`Message sent correctly. Order number: ${orderNumber}`}
+            onClose={closeSentPopup}
+          />
+        )
+      }
     </>
   );
 };
