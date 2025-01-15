@@ -1,5 +1,5 @@
 import { Button, Input } from "../../../ServicePage/Sendmail/styled";
-import { ImportantText, Items, BlockItem, BlockLogo, Header } from "./styled";
+import { ImportantText, Items, BlockItem, BlockLogo, Header, RadioInput, CustomRB } from "./styled";
 import { LogoEdit } from "../TaskItemView/styled";
 import { Title } from "../TaskItemView/styled";
 
@@ -65,25 +65,28 @@ const TaskItemEditing = ({
           />
         </BlockItem>
         <BlockItem>
-          <ImportantText>Private or Company: </ImportantText>
-          <Input
-            type="radio"
-            id="company"
-            value="Company"
-            name="from_company"
-            checked={editData.from_company === "Company"}
-            onChange={handleEditChange}
-          />
-          <label htmlFor="company">Company</label>
-          <Input
-            type="radio"
-            id="private"
-            name="from_company"
-            value="Private"
-            checked={editData.from_company === "Private"}
-            onChange={handleEditChange}
-          />
-          <label htmlFor="company">Private</label>
+          <div>
+            <RadioInput
+              type="radio"
+              id="company"
+              name="from_company"
+              value="Company"
+              checked={editData.from_company === "Company"}
+              onChange={handleEditChange}
+            />
+            <CustomRB htmlFor="company">Company</CustomRB>
+          </div>
+          <div>
+            <RadioInput
+              type="radio"
+              id="private"
+              name="from_company"
+              value="Private"
+              checked={editData.from_company === "Private"}
+              onChange={handleEditChange}
+            />
+            <CustomRB htmlFor="private">Private</CustomRB>
+          </div>
         </BlockItem>
         <BlockItem>
           <ImportantText>Company Name: </ImportantText>

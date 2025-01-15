@@ -38,3 +38,38 @@ export const BlockLogo = styled.div`
   align-items: center;
   gap: 10px;
 `
+export const CustomRB = styled.label`
+    display: inline-flex;
+    align-items: center;
+    
+    &:before{
+        content: '';
+        display: block;
+        height: 1.25em;
+        width: 1.25em;
+        border: solid 1px;
+        border-radius: 50%;
+        margin-right: 0.5em;
+    }
+        
+    &:hover{
+        cursor: pointer;
+    }
+`;
+
+export const RadioInput = styled.input.attrs({ type: 'radio' })`
+    display: none;
+
+    &:checked + ${CustomRB} {
+        color: ${({theme}) => theme.color.mainblue};
+
+
+        &::before{
+        background: radial-gradient(
+        0.75em circle at center,
+        currentColor 50%,
+        transparent 55%
+        );
+    }
+}
+`;
