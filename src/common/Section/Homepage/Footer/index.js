@@ -5,10 +5,10 @@ import { Container, Title, Text, BlockLeft } from "./styled";
 const Footer = () => (
   <Container>
     <BlockLeft>
-      <Title>Zostańmy w kontakcie!</Title>
+      <Title>Let's stay in touch!</Title>
       <Text>
-        Tworzenie stron internetowych, opierających się na nowoczxesnych
-        technologiach
+        Creating websites based on modern
+        technologies
       </Text>
       <SocialMedia />
     </BlockLeft>

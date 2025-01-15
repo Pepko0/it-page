@@ -10,17 +10,18 @@ const HomePageHeader = () => {
       <div>
         <Title>IT-Lion</Title>
         <Text>
-          Szukasz nowoczesnej, responsywnej i funkcjonalnej strony internetowej?
-          💻<br></br> <b>Skontaktuj się z nami już dziś!</b> <br></br> Jesteśmy doświadczoną firmą
-          specjalizującą się w tworzeniu stron internetowych za pomocą React.
-          Dzięki nowoczesnym technologiom i sprawdzonym metodom programowania,
-          tworzymy strony, które nie tylko wyglądają świetnie, ale także
-          działają bez zarzutu.<br></br> <b>Dlaczego warto wybrać nas?</b><br></br> 🌟 Indywidualne
-          podejście do każdego projektu <br></br>🚀 Szybkie i efektywne realizacje<br></br> 📱
-          Strony responsywne, dostosowane do urządzeń mobilnych <br></br>🔒
-          Bezpieczeństwo i optymalizacja <br></br>Nie czekaj! Skontaktuj się z nami już
-          dziś i zyskaj stronę internetową, która wyróżni Twoją firmę na tle
-          konkurencji! 📧
+          Looking for a modern, responsive, and functional website?
+          💻<br></br> <b>Contact us today!</b> <br></br> We are an experienced company
+          specializing in creating websites using React.
+          With modern technologies and proven programming methods,
+          we create websites that not only look great but also
+          work flawlessly.<br></br> <b>Why choose us?</b><br></br> 🌟 Individual
+          approach to every project <br></br>🚀 Fast and efficient execution<br></br> 📱
+          Responsive websites, adapted to mobile devices <br></br>🔒
+          Security and optimization <br></br>Don't wait! Contact us today
+          and get a website that will make your company stand out
+          from the competition! 📧
+
         </Text>
       </div>
     </Header>
