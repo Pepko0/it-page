@@ -39,8 +39,12 @@ export const Logo = styled.svg`
 `;
 
 export const Title = styled.h1`
-  font-size: 2vw;
+  font-size: 2.5em;
   margin-top: 0px;
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    font-size: 3vw;
+  }
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
     font-size: 5vw;
@@ -48,16 +52,24 @@ export const Title = styled.h1`
 `;
 
 export const SubText = styled.p`
-  font-size: 1vw;
+  font-size: 1.7em;
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    font-size: 2vw;
+  }
+
   @media (max-width: ${({ theme }) => theme.media.phone}) {
-    font-size: 3vw;
+    font-size: 1.5em;
     margin-bottom: 0px;
   }
 `;
 
 export const Text = styled.p`
-  font-size: 1.3vw;
+  font-size: 1.5em;
+  
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    font-size: 2vw;
 
+  }
   @media (max-width: ${({ theme }) => theme.media.phone}) {
     font-size: 3.5vw;
   }
