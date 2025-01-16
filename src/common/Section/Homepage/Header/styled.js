@@ -4,7 +4,7 @@ export const Header = styled.header`
   width:  ${({ theme }) => theme.width.component};
   margin: 100px auto 40px;
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: auto 3fr;
   grid-gap: 2vw;
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
@@ -13,10 +13,10 @@ export const Header = styled.header`
 `;
 
 export const Logo = styled.svg`
-  width: 18vw;
-  height: 18vw;
+  width: 20em;
   margin: auto;
   border-radius: 100%;
+  box-shadow: 5px 5px 5px 0px #e8e8e8;
   fill:${({ theme }) => theme.color.lightgray};
   background: rgb(2, 0, 36);
   background: linear-gradient(
@@ -27,11 +27,14 @@ export const Logo = styled.svg`
     rgba(0, 212, 255, 1) 100%
   );
 
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    width: 25vw;
+  }
+
   @media (max-width: ${({ theme }) => theme.media.phone}) {
     align-self: center;
     justify-self: center;
     width: 40vw;
-    height: 40vw;
   }
 `;
 
