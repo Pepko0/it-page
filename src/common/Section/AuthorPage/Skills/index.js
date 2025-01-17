@@ -1,9 +1,9 @@
 import { Container, Title, List, Ul } from "./styled";
 
-const Skills = ({ skills }) => {
+const Skills = ({ skills, title }) => {
   return (
     <Container>
-      <Title>My skills includes</Title>
+      <Title>{title}</Title>
       <Ul>{skills && skills.map((skill, index) => <List key={index}>{skill}</List>)}</Ul>
     </Container>
   );

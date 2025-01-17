@@ -1,23 +1,35 @@
-
 {
-    "mySkills": [
-        "HTML: Semantics & accessibility",
-        "Responsive Web Design",
-        "JavaScript: ES6+",
-        "CSS BEM convention",
-        "Promises, Async/await",
-        "Immutability",
-        "CSS Grid & Flexbox",
-        "React",
-        "React Hooks",
-        "React Router",
-        "Redux (Toolkit)",
-        "Redux-Saga",
-        "Working with API (fetch, axios)",
-        "Error handling",
-        "Git",
-        "NPM",
-        "Scrum",
-        "Trello"
-    ]
+    "mySkills": {
+        "title": "My skills includes",
+        "list": [
+            "HTML: Semantics & accessibility",
+            "Responsive Web Design",
+            "JavaScript: ES6+",
+            "CSS BEM convention",
+            "Promises, Async/await",
+            "Immutability",
+            "CSS Grid & Flexbox",
+            "React",
+            "React Hooks",
+            "React Router",
+            "Redux (Toolkit)",
+            "Redux-Saga",
+            "Working with API (fetch, axios)",
+            "Error handling",
+            "Git",
+            "NPM",
+            "Scrum",
+            "Trello"
+        ],
+
+        "toLearn": "What I want to learn",
+        "whatWantToLearn": [
+            "React Context",
+            "Node.js",
+            "Cypress",
+            "Unit testing",
+            "Type Script",
+            "JS classes"
+        ]
+    }
 }

@@ -12,8 +12,13 @@ const Author = () => {
     <>
       <Navigation />
       <AuthorHeader />
-      <Skills skills={skills.mySkills} />
+      <Skills 
+        title={skills.mySkills.title}
+        skills={skills.mySkills.list} />
       <RepositoriesPage />
+      <Skills 
+        title={skills.mySkills.toLearn}
+        skills={skills.mySkills.whatWantToLearn} />
       <Footer />
     </>
   );
