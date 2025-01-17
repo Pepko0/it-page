@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const RepositoriesContent = styled.div`
   margin: 10px;
-  padding: 10px;
+  padding: 20px;
   background-color: white;
   box-shadow: 5px 5px 5px 0px #eaeaea;
 `;
@@ -10,8 +10,8 @@ export const RepositoriesContent = styled.div`
 export const Title = styled.h2`
   font-family: ${({ theme }) => theme.font.inter};
   font-weight: 900;
-  font-size: 2em;
-  margin-top: 5px;
+  font-size: 1.7em;
+  margin-top: 0px;
   
   @media(max-width: ${({theme}) => theme.media.tablet}){
     font-size: 3vw;
