@@ -1,6 +1,6 @@
 {
     "mySkills": {
-        "title": "My skills includes",
+        "title": "My skills includes 🛠️",
         "list": [
             "HTML: Semantics & accessibility",
             "Responsive Web Design",
@@ -22,7 +22,7 @@
             "Trello"
         ],
 
-        "toLearn": "What I want to learn",
+        "toLearn": "What I want to learn next 🚀",
         "whatWantToLearn": [
             "React Context",
             "Node.js",
