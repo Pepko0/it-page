@@ -12,18 +12,20 @@ const RepositoriesPage = () => {
       return <Loading />;
     case "succes":
       return (
-        <Content>
-          {repositoriesData.data &&
-            repositoriesData.data.map((repository) => (
-              <Repositories
-                key={repository.id}
-                title={repository.name}
-                descriptions={repository.descriptions}
-                linkPage={repository.html_url}
-                linkRepositories={repository.homepage}
-              />
-            ))}
-        </Content>
+        <>
+          <Content>
+            {repositoriesData.data &&
+              repositoriesData.data.map((repository) => (
+                <Repositories
+                  key={repository.id}
+                  title={repository.name}
+                  descriptions={repository.descriptions}
+                  linkPage={repository.html_url}
+                  linkRepositories={repository.homepage}
+                />
+              ))}
+          </Content>
+        </>
       );
     case "error":
       return <ErrorGH />;
