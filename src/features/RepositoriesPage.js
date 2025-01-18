@@ -9,7 +9,9 @@ const RepositoriesPage = () => {
 
   switch (repositoriesData.status) {
     case "pending":
-      return <Loading />;
+      return <Loading 
+        title="Please wait, projects are being loaded"
+      />;
     case "succes":
       return (
         <>

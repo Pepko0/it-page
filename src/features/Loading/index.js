@@ -1,11 +1,11 @@
 import { Container, Loader, Title } from "./styled";
 
-const Loading = () => {
+const Loading = ({ title }) => {
 
   return (
     <Container>
+      <Title>{title}</Title>
       <Loader />
-      <Title>Pobieranie Danych...</Title>
     </Container>
   );
 };

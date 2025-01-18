@@ -26,7 +26,7 @@ const useRepositoriesData = () => {
       } catch (error) {
         setRepositoriesData({ status: "error" });
       }
-    }, 3000);
+    }, 300000);
   }, []);
   return { repositoriesData };
 };
