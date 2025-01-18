@@ -11,9 +11,9 @@ const Repositories = ({
       <Title>{title}</Title>
       <Content>{descriptions}</Content>
       <Text>Demo: </Text>
-      <Link href={linkRepositories}>{linkRepositories} <br /></Link>
+      <Link href={linkRepositories}>https://link.demo.com <br /></Link>
       <Text>Repo: </Text>
-      <Link href={linkPage}>{linkPage}</Link>
+      <Link href={linkPage}>https://link.code.com</Link>
     </RepositoriesContent>
   );
 };
