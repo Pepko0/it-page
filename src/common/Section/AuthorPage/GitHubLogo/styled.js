@@ -16,7 +16,7 @@ export const LogoGH = styled.svg`
   }
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
-    width: 10vw;
+    width: 14vw;
   }
 `;
 
