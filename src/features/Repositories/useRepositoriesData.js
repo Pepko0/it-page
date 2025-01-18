@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const apiGitHub = "https://api.github.com/users/Pepko0/repos";
+const apiGitHub = "https://api.github.com/users/Pepko0/reposss";
 
 const useRepositoriesData = () => {
   const [repositoriesData, setRepositoriesData] = useState({
@@ -26,7 +26,7 @@ const useRepositoriesData = () => {
       } catch (error) {
         setRepositoriesData({ status: "error" });
       }
-    }, 300000);
+    }, 3000);
   }, []);
   return { repositoriesData };
 };

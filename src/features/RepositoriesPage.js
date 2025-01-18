@@ -30,7 +30,11 @@ const RepositoriesPage = () => {
         </>
       );
     case "error":
-      return <ErrorGH />;
+      return <ErrorGH 
+        title="Oooops! Something went wrong..."
+        text="Sorry, failed to load Github projects. You can chec them directly on Github."
+        textLink="Go to Github"
+      />;
   }
 };
 

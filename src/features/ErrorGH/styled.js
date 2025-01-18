@@ -1,41 +1,81 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: ${({theme}) => theme.width.component};
-  padding: 50px;
-  margin: auto;
+  width: ${({ theme }) => theme.width.component};
+  margin: 80px auto;
   display: flex;
-  background-color: #d6d6d6;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 5px 5px 5px 0px #eaeaea;
 `;
 
-export const Title = styled.h2`
-  font-size: 1.8vw;
-  padding: 10px;
+export const Title = styled.p`
+  margin-top: 2px;
+  margin-bottom: 0px;
+  text-align: center;
+  font-weight: bold;    
+  font-size: 2.5em;
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    font-size: 2.2vw;
+    font-size: 3vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.phone}) {
+    font-size: 5vw;
+  }
+`;
+
+export const Text = styled.p`
+  font-size: 1.7em;
+  text-align: center;
+  margin-top: 10px;
+
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    font-size: 2vw;
+  }
+
+  @media (max-width: ${({ theme }) => theme.media.phone}) {
+    font-size: 3vw;
+  }
+`
+
+export const Link = styled.a.attrs({
+  href: "https://github.com/Pepko0?tab=repositories",
+  title: "Open my Github repositories",
+  target: "_blank",
+  })`
+  text-decoration: none;
+  color: ${({theme}) => theme.color.white};
+  background-color: ${({theme}) => theme.color.mainblue};
+  padding: 16px;
+  border-radius: 4px;
+  transition:  0.2s;
+
+  &:hover {
+    background-color: ${({theme}) => theme.color.cornflowerblue};
+  }
+  @media (max-width: ${({ theme }) => theme.media.tablet}) {
+    font-size: 2vw;
   }
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
     font-size: 4vw;
   }
-`;
 
-export const IconGitHub = styled.svg`
-  width: 12vw;
-  animation-duration: 2s;
-  animation-delay: 0.5s;
-  fill: #df5252;
+`
+
+export const Logo = styled.img.attrs({
+  src: "it-page/icons/Danger.png",
+  alt: "Danger" ,
+})`
+  width: 75px;
 
   @media (max-width: ${({ theme }) => theme.media.tablet}) {
-    width: 18vw;
+    width: 8vw;
   }
 
   @media (max-width: ${({ theme }) => theme.media.phone}) {
-    width: 25vw;
+    width: 10vw;
   }
+
 `;
