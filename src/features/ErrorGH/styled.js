@@ -65,7 +65,7 @@ export const Link = styled.a.attrs({
 `
 
 export const Logo = styled.img.attrs({
-  src: "it-page/icons/Danger.png",
+  src: `${process.env.PUBLIC_URL}/it-page/icons/Danger.png`,
   alt: "Danger" ,
 })`
   width: 75px;
