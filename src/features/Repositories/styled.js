@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const RepositoriesContent = styled.div`
   margin: 10px;
-  padding: 20px;
+  padding: 25px;
   background-color: white;
   box-shadow: 5px 5px 5px 0px #eaeaea;
 `;
